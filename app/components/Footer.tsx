@@ -9,7 +9,7 @@ function Footer() {
   };
 
   return (
-    <footer className='bg-off-white border-t border-blue-dark border-opacity-15'>
+    <footer id='footer' className='bg-light border-t border-blue-dark border-opacity-15'>
       <div className='max-w-[1280px] mx-auto px-10 py-16'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-12 mb-12'>
           <div className='flex flex-col gap-4'>

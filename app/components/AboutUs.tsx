@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 function AboutUs() {
   return (
-    <section id='about' className='px-5 md:px-15 py-20'>
+    <div className='px-5 md:px-15 py-20'>
       <div className='flex justify-start gap-5 mb-20'>
         <h1 className='text-darkBlue text-7xl font-extrabold font-inter uppercase'>
           WHO WE ARE
@@ -85,14 +85,14 @@ function AboutUs() {
         </h1>
       </div>
       <div className='flex flex-col items-center justify-center gap-5 mb-20'>
-        <h2 className='text-darkBlue text-2xl font-semibold font-mono uppercase mb-5'>
-          An Athlete&apos;s Drive. A Leader&apos;s Vision.
+        <h2 className='text-darkBlue text-xl font-semibold font-mono uppercase mb-5'>
+          An Athlete's Drive. A Leader's Vision.
         </h2>
         <p className='text-darkBlue text-sm font-roboto font-light text-center uppercase max-w-6xl'>
-          I&apos;m Dhanielly Quevedo — a top-ranked U.S. padel athlete and
+          I'm Dhanielly Quevedo — a top-ranked U.S. padel athlete and
           former Division I tennis player. Competing at an elite level has
           taught me discipline, resilience, and purpose. Off the court,
-          I&apos;ve spent nearly a decade leading corporate communications for
+          I've spent nearly a decade leading corporate communications for
           global brands — from Fortune 100 companies to fast-growing startups.
           <br />
           <br />
@@ -103,7 +103,7 @@ function AboutUs() {
           through integrity, creativity, and a shared passion for the game.
         </p>
       </div>
-    </section>
+    </div>
   );
 }
 

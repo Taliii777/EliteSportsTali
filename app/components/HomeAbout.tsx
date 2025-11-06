@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function HomeAbout() {
   return (
-    <section id='about' className='px-5 md:px-15 py-20'>
+    <div className='px-5 md:px-15 py-20'>
         <h2 className='text-black text-2xl font-roboto font-medium uppercase mb-14'>
           About
         </h2>
@@ -72,7 +72,7 @@ function HomeAbout() {
             </p>
           </div>
         </div>
-      </section>
+      </div>
   )
 }
 

@@ -4,11 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -37,18 +37,19 @@ function Header() {
   const pathname = usePathname();
   const isAboutPage = pathname === '/about';
   const isAthletesPage = pathname === '/athletes';
-  const isContactPage = pathname === '/contact';
+  const isContactPage = pathname === '#footer';
   const isClubsPage = pathname === '/clubs';
   return (
     <>
       <header
-        className={`flex justify-between items-center py-5 px-10 fixed top-0 left-0 right-0 z-50 transition-all ${
-          isScrolled ? 'bg-light border-b border-black' : 'bg-transparent'
+        className={`flex justify-between items-center py-2 px-10 fixed top-0 left-0 right-0 z-50 transition-all ${
+          isScrolled ? 'bg-light' : 'bg-transparent'
         }`}
       >
         <Image
           src='/eliteLogo.svg'
-          className={`w-[150px] h-[60px] md:w-[238px] md:h-[100px] ${
+          onClick={() => router.push('/')}
+          className={`w-[150px] h-[60px] md:w-[238px] md:h-[100px] cursor-pointer ${
             isScrolled ? 'brightness-0' : ''
           }`}
           alt='logo'
@@ -62,16 +63,40 @@ function Header() {
             }`}
           >
             <li>
-              <Link href='/about' className={`hover:underline ${isAboutPage ? 'underline' : ''}`}>About</Link>
+              <Link
+                href='/about'
+                className={`hover:underline ${isAboutPage ? 'underline' : ''}`}
+              >
+                About
+              </Link>
             </li>
             <li>
-              <Link href='/athletes' className={`hover:underline ${isAthletesPage ? 'underline' : ''}`}>Athletes</Link>
+              <Link
+                href='/athletes'
+                className={`hover:underline ${
+                  isAthletesPage ? 'underline' : ''
+                }`}
+              >
+                Athletes
+              </Link>
             </li>
             <li>
-              <Link href='/contact' className={`hover:underline ${isContactPage ? 'underline' : ''}`}>Contact</Link>
+              <Link
+                href='/#footer'
+                className={`hover:underline ${
+                  isContactPage ? 'underline' : ''
+                }`}
+              >
+                Contact
+              </Link>
             </li>
             <li>
-              <Link href='/clubs' className={`hover:underline ${isClubsPage ? 'underline' : ''}`}>Clubs | Organizations</Link>
+              <Link
+                href='/clubs'
+                className={`hover:underline ${isClubsPage ? 'underline' : ''}`}
+              >
+                Clubs | Organizations
+              </Link>
             </li>
           </ul>
           <button
@@ -79,7 +104,9 @@ function Header() {
             className='md:hidden cursor-pointer'
             aria-label='Toggle menu'
           >
-            <Menu className={`size-7 ${isScrolled ? 'text-black' : 'text-light'}`} />
+            <Menu
+              className={`size-7 ${isScrolled ? 'text-black' : 'text-light'}`}
+            />
           </button>
         </nav>
       </header>
