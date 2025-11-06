@@ -49,6 +49,25 @@ export default function RootLayout({
         crossOrigin='anonymous'
       />
 
+      <link
+        rel='apple-touch-icon'
+        sizes='180x180'
+        href='/apple-touch-icon.png'
+      />
+      <link
+        rel='icon'
+        type='image/png'
+        sizes='32x32'
+        href='/favicon-32x32.png'
+      />
+      <link
+        rel='icon'
+        type='image/png'
+        sizes='16x16'
+        href='/favicon-16x16.png'
+      />
+      <link rel='manifest' href='/site.webmanifest' />
+
       {/* Preload de fuentes de Google Fonts importadas vía CSS */}
       <link
         rel='preload'
@@ -56,10 +75,14 @@ export default function RootLayout({
         as='style'
       />
 
-      
-
       {/* Preload de imágenes críticas */}
-      <link rel='preload' href='/hero.webp' as='image' type='image/webp' fetchPriority='high' />
+      <link
+        rel='preload'
+        href='/hero.webp'
+        as='image'
+        type='image/webp'
+        fetchPriority='high'
+      />
       <link rel='preload' href='/isotipo.svg' as='image' type='image/svg+xml' />
       <link
         rel='preload'
