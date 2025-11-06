@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Inter } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -16,6 +16,15 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
   display: 'swap',
   preload: true,
+});
+
+// Agregar Inter con next/font
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  weight: ['400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
@@ -60,7 +69,7 @@ export default function RootLayout({
       <link rel='preload' href='/frase.webp' as='image' type='image/webp' />
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
         <Header />
         {children}
