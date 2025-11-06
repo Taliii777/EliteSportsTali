@@ -31,6 +31,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      {/* Preconnect a Google Fonts para cargar más rápido */}
+      <link rel='preconnect' href='https://fonts.googleapis.com' />
+      <link
+        rel='preconnect'
+        href='https://fonts.gstatic.com'
+        crossOrigin='anonymous'
+      />
+
       {/* Preload de fuentes de Google Fonts importadas vía CSS */}
       <link
         rel='preload'
@@ -39,7 +47,7 @@ export default function RootLayout({
       />
 
       {/* Preload de imágenes críticas */}
-      <link rel='preload' href='/hero.jpg' as='image' type='image/jpeg' />
+      <link rel='preload' href='/hero.webp' as='image' type='image/webp' />
       <link rel='preload' href='/isotipo.svg' as='image' type='image/svg+xml' />
       <link
         rel='preload'
@@ -47,6 +55,8 @@ export default function RootLayout({
         as='image'
         type='image/svg+xml'
       />
+      <link rel='preload' href='/about-2.webp' as='image' type='image/webp' />
+      <link rel='preload' href='/about-3.webp' as='image' type='image/webp' />
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -43,6 +43,17 @@ body {
   font-family: var(--font-roboto-condensed);
 }
 
+/* Prevenir layout shifts en títulos grandes */
+h1.font-inter {
+  text-rendering: optimizeSpeed;
+  contain: layout style;
+}
+
+/* Reservar espacio para evitar layout shifts */
+section#about h1 {
+  contain: layout;
+}
+
 @layer utilities {
   .scroll-snap-align-start {
     scroll-snap-align: start;

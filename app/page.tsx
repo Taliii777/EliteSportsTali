@@ -1,4 +1,5 @@
 import { ArrowDown, CopyrightIcon, ArrowLeft, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
           </div>
         </div>
         <img
-          src='hero.jpg'
+          src='hero.webp'
           alt='hero image'
           className='w-full h-full object-cover object-top max-h-screen'
         />
@@ -43,7 +44,7 @@ export default function Home() {
           About
         </h2>
         <div className='flex items-end justify-center gap-5 mb-20'>
-          <h1 className='text-darkBlue text-7xl/15 font-bold font-inter uppercase '>
+          <h1 className='text-darkBlue text-7xl/15 font-bold font-inter uppercase'>
             EXCELLENCE IN
             <br />
             EVERY MOVE
@@ -57,10 +58,12 @@ export default function Home() {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 max-w-7xl mx-auto'>
           <div className='flex flex-col'>
             <div className='col-span-1 w-auto h-[445px] overflow-hidden rounded-sm mb-5'>
-              <img
-                src='/hero.jpg'
+              <Image
+                src='/hero.webp'
                 alt='about 1'
                 className='w-full h-full object-cover object-center'
+                width={500}
+                height={500}
               />
             </div>
             <h3 className='text-darkBlue text-2xl font-mono font-bold uppercase'>
@@ -72,10 +75,12 @@ export default function Home() {
           </div>
           <div className='flex flex-col'>
             <div className='col-span-1 w-auto h-[445px] overflow-hidden rounded-sm mb-5'>
-              <img
-                src='/about-2.jpg'
+              <Image
+                src='/about-2.webp'
                 alt='about 1'
                 className='w-full h-full object-cover object-center'
+                width={500}
+                height={500}
               />
             </div>
             <h3 className='text-darkBlue text-2xl font-mono font-bold uppercase'>
@@ -87,10 +92,12 @@ export default function Home() {
           </div>
           <div className='flex flex-col'>
             <div className='col-span-1 w-auto h-[445px] overflow-hidden rounded-sm mb-5'>
-              <img
-                src='/about-3.jpg'
+              <Image
+                src='/about-3.webp'
                 alt='about 1'
                 className='w-full h-full object-cover object-center'
+                width={500}
+                height={500}
               />
             </div>
             <h3 className='text-darkBlue text-2xl font-mono font-bold uppercase'>
@@ -107,13 +114,12 @@ export default function Home() {
         </div>
       </section>
       <div className='flex items-center justify-center relative bg-black/50 py-30'>
-        {/* <div className='absolute top-0 left-0 right-0 bottom-0 bg-black flex items-center justify-center'></div> */}
         <h1 className='text-light text-8xl/20 font-extrabold uppercase text-center'>
           “Built for athletes chasing their dreams and brands ready to champion
           them.”
         </h1>
         <img
-          src='frase.jpg'
+          src='frase.webp'
           alt='frase'
           className='w-full h-full object-cover object-center max-h-screen absolute top-0 left-0 right-0 bottom-0 -z-10'
         />
