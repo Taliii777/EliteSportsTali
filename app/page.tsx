@@ -1,5 +1,6 @@
 import { ArrowDown, CopyrightIcon } from 'lucide-react';
 import HomeAbout from './components/HomeAbout';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -33,10 +34,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img
-          src='hero.webp'
+        <Image
+          src='/hero.webp'
           alt='hero image'
           className='w-full h-full object-cover object-top max-h-screen'
+          width={1000}
+          height={1000}
+          priority
         />
       </div>
       <HomeAbout />
