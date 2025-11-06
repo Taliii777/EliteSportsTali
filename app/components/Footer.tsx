@@ -1,21 +1,13 @@
-// import React from 'react';
+'use client';
 import Link from 'next/link';
-import { Instagram, Mail, Phone } from 'lucide-react';
-
-const getIcon = (iconName: string) => {
-  switch (iconName) {
-    case 'instagram':
-      return <Instagram size={24} />;
-    case 'whatsapp':
-      return <Phone size={24} />;
-    case 'mail':
-      return <Mail size={24} />;
-    default:
-      return null;
-  }
-};
+import { Instagram, Mail, Phone, Copy, CopyIcon } from 'lucide-react';
 
 function Footer() {
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    alert(`Copied ${text} to clipboard`);
+  };
+
   return (
     <footer className='bg-off-white border-t border-blue-dark border-opacity-15'>
       <div className='max-w-[1280px] mx-auto px-10 py-16'>
@@ -37,10 +29,30 @@ function Footer() {
               Quick Links
             </h3>
             <nav className='flex flex-col gap-3'>
-              <Link href='/'>About</Link>
-              <Link href='/'>Athletes</Link>
-              <Link href='/'>Contact</Link>
-              <Link href='/'>Clubs | Organizations</Link>
+              <Link
+                href='/about'
+                className='hover:text-red transition-colors hover:underline'
+              >
+                About
+              </Link>
+              <Link
+                href='/athletes'
+                className='hover:text-red transition-colors hover:underline'
+              >
+                Athletes
+              </Link>
+              <Link
+                href='/contact'
+                className='hover:text-red transition-colors hover:underline'
+              >
+                Contact
+              </Link>
+              <Link
+                href='/clubs-organizations'
+                className='hover:text-red transition-colors hover:underline'
+              >
+                Clubs | Organizations
+              </Link>
             </nav>
           </div>
 
@@ -49,29 +61,48 @@ function Footer() {
               Connect With Us
             </h3>
             <div className='flex gap-4'>
-              <Link href='https://www.instagram.com/elitesportsmanagement/'>
+              <Link
+                href='https://www.instagram.com/elitesportsmanagement__/'
+                className='hover:text-red transition-colors hover:underline'
+              >
                 Instagram
               </Link>
-              <Link href='/'>WhatsApp</Link>
-              <Link href='/'>Email</Link>
+              <Link
+                href='https://wa.me/19548576541'
+                className='hover:text-red transition-colors hover:underline'
+              >
+                WhatsApp
+              </Link>
+              <Link
+                href='mailto:dhany@elitesportsmgt.com'
+                className='hover:text-red transition-colors hover:underline'
+              >
+                Email
+              </Link>
             </div>
             <div className='mt-4 text-blue-dark text-sm font-body-regular'>
-              <p className='mb-1'>
+              <p className='mb-1 flex items-center gap-2'>
                 <strong>Email:</strong>{' '}
                 <a
-                  href='mailto:info@elitesportsmanagement.com'
-                  className='hover:text-red transition-colors'
+                  href='mailto:dhany@elitesportsmgt.com'
+                  className='hover:text-red transition-colors hover:underline'
                 >
-                  info@elitesportsmanagement.com
+                  dhany@elitesportsmgt.com
                 </a>
+                <button
+                  onClick={() => copyToClipboard('dhany@elitesportsmgt.com')}
+                  className='ml-2 text-blue-dark hover:text-red transition-colors hover:underline cursor-pointer'
+                >
+                  <CopyIcon className='size-4' />
+                </button>
               </p>
               <p>
                 <strong>Phone:</strong>{' '}
                 <a
-                  href='tel:+1234567890'
-                  className='hover:text-red transition-colors'
+                  href='tel:+19548576541'
+                  className='hover:text-red transition-colors hover:underline'
                 >
-                  +1 (234) 567-890
+                  +1 (954) 857-6541
                 </a>
               </p>
             </div>
@@ -87,13 +118,13 @@ function Footer() {
             <div className='flex gap-6 text-xs font-body-regular'>
               <Link
                 href='/privacy'
-                className='text-blue-dark hover:text-red transition-colors'
+                className='text-blue-dark hover:text-red transition-colors hover:underline'
               >
                 Privacy Policy
               </Link>
               <Link
                 href='/terms'
-                className='text-blue-dark hover:text-red transition-colors'
+                className='text-blue-dark hover:text-red transition-colors hover:underline'
               >
                 Terms of Service
               </Link>

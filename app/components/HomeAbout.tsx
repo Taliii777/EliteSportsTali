@@ -3,12 +3,12 @@ import Image from 'next/image';
 
 function HomeAbout() {
   return (
-    <section id='about' className='px-15 py-20'>
+    <section id='about' className='px-5 md:px-15 py-20'>
         <h2 className='text-black text-2xl font-roboto font-medium uppercase mb-14'>
           About
         </h2>
-        <div className='flex items-end justify-center gap-5 mb-20'>
-          <h1 className='text-darkBlue text-7xl/15 font-bold font-inter uppercase'>
+        <div className='flex flex-col md:flex-row items-start md:items-end justify-center gap-5 mb-20'>
+          <h1 className='text-darkBlue md:text-7xl/15 sm:text-5xl/10 text-4xl/10 font-bold font-inter uppercase'>
             EXCELLENCE IN
             <br />
             EVERY MOVE
@@ -19,7 +19,7 @@ function HomeAbout() {
             Management?
           </p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 max-w-7xl mx-auto'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 lg:gap-10 gap-5 max-w-7xl mx-auto'>
           <div className='flex flex-col'>
             <div className='col-span-1 w-auto h-[445px] overflow-hidden rounded-sm mb-5'>
               <Image
@@ -71,10 +71,6 @@ function HomeAbout() {
               Grow Your Community
             </p>
           </div>
-        </div>
-        <div className='flex items-center gap-10 mt-10'>
-          <ArrowLeft className='size-8 text-redd cursor-pointer' />
-          <ArrowRight className='size-8 text-redd cursor-pointer' />
         </div>
       </section>
   )
