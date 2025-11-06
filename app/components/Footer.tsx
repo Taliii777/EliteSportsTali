@@ -63,18 +63,21 @@ function Footer() {
             <div className='flex gap-4'>
               <Link
                 href='https://www.instagram.com/elitesportsmanagement__/'
+                target='_blank'
                 className='hover:text-red transition-colors hover:underline'
               >
                 Instagram
               </Link>
               <Link
                 href='https://wa.me/19548576541'
+                target='_blank'
                 className='hover:text-red transition-colors hover:underline'
               >
                 WhatsApp
               </Link>
               <Link
                 href='mailto:dhany@elitesportsmgt.com'
+                target='_blank'
                 className='hover:text-red transition-colors hover:underline'
               >
                 Email
