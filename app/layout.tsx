@@ -93,6 +93,46 @@ export default function RootLayout({
       <link rel='preload' href='/about-2.webp' as='image' type='image/webp' />
       <link rel='preload' href='/about-3.webp' as='image' type='image/webp' />
       <link rel='preload' href='/frase.webp' as='image' type='image/webp' />
+      <link
+        rel='preload'
+        href='/athleteshero.webp'
+        as='image'
+        type='image/webp'
+      />
+      <link rel='preload' href='/elitelogo.webp' as='image' type='image/webp' />
+      <link rel='preload' href='/padel.webp' as='image' type='image/webp' />
+      <link rel='preload' href='/padel1.webp' as='image' type='image/webp' />
+      <link rel='preload' href='/padel2.webp' as='image' type='image/webp' />
+      <link
+        rel='preload'
+        href='/propadellogo.webp'
+        as='image'
+        type='image/webp'
+      />
+      <link
+        rel='preload'
+        href='/wilsonlogo.webp'
+        as='image'
+        type='image/webp'
+      />
+      <link rel='preload' href='/red&blue.webp' as='image' type='image/webp' />
+      <link rel='preload' href='/towerlogo.webp' as='image' type='image/webp' />
+      <link
+        rel='preload'
+        href='/bgocorporate.webp'
+        as='image'
+        type='image/webp'
+      />
+      <link
+        rel='preload'
+        href='/corkpadellogo.webp'
+        as='image'
+        type='image/webp'
+      />
+      <link rel='preload' href='/6lslogo.webp' as='image' type='image/webp' />
+      <link rel='preload' href='/3.webp' as='image' type='image/webp' />
+      <link rel='preload' href='/2.webp' as='image' type='image/webp' />
+      <link rel='preload' href='/vector.webp' as='image' type='image/webp' />
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
