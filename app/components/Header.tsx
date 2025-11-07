@@ -37,7 +37,7 @@ function Header() {
   const pathname = usePathname();
   const isAboutPage = pathname === '/about';
   const isAthletesPage = pathname === '/athletes';
-  const isContactPage = pathname === '#footer';
+  const isContactPage = pathname === '/#footer';
   const isClubsPage = pathname === '/clubs';
   return (
     <>
@@ -144,7 +144,7 @@ function Header() {
                 <Link
                   href='/about'
                   onClick={handleLinkClick}
-                  className='text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2'
+                  className={`text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2 ${isAboutPage ? 'underline' : ''}`}
                 >
                   About
                 </Link>
@@ -153,16 +153,16 @@ function Header() {
                 <Link
                   href='/athletes'
                   onClick={handleLinkClick}
-                  className='text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2'
+                  className={`text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2 ${isAthletesPage ? 'underline' : ''}`}
                 >
                   Athletes
                 </Link>
               </li>
               <li>
                 <Link
-                  href='#footer'
+                  href='/#footer'
                   onClick={handleLinkClick}
-                  className='text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2'
+                  className={`text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2 ${isContactPage ? 'underline' : ''}`}
                 >
                   Contact
                 </Link>
@@ -171,7 +171,7 @@ function Header() {
                 <Link
                   href='/clubs'
                   onClick={handleLinkClick}
-                  className='text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2'
+                  className={`text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2 ${isClubsPage ? 'underline' : ''}`}
                 >
                   Clubs | Organizations
                 </Link>
