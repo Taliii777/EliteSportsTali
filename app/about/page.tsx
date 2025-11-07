@@ -47,7 +47,7 @@ export default function Home() {
         />
         <div className='absolute top-0 left-0 right-0 bottom-0 z-10'>
           <div className='flex flex-col items-center justify-center h-full w-full px-4 max-w-full overflow-hidden'>
-            <h1 className='text-light text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase max-w-full wrap-break-word text-left leading-none'>
+            <h1 className='text-light font-inter text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase max-w-full wrap-break-word text-left leading-none'>
               WE Are
             </h1>
             <Image
@@ -74,7 +74,7 @@ export default function Home() {
       </div>
       <AboutUs />
       <div className='bg-lightBlue px-10 py-20'>
-        <h2 className='text-black text-2xl font-roboto font-medium uppercase mb-20'>
+        <h2 className='text-black text-2xl font-roboto-mono font-normal uppercase mb-20'>
           Services
         </h2>
         <div className='flex flex-col items-center justify-center gap-10 w-full max-w-8xl mx-auto'>
@@ -97,7 +97,7 @@ export default function Home() {
                 <h1 className='text-light text-3xl md:text-5xl lg:text-8xl font-judson uppercase text-center max-w-full wrap-break-word'>
                   Athletes
                 </h1>
-                <p className='text-light lg:text-2xl font-roboto font-light uppercase text-center max-w-full wrap-break-word'>
+                <p className='text-light lg:text-2xl font-condensed font-normal uppercase text-center max-w-full wrap-break-word'>
                   Elevate Your Career Beyond the Court.
                 </p>
               </div>
@@ -114,47 +114,47 @@ export default function Home() {
                   <h1 className='text-light text-3xl md:text-5xl lg:text-6xl font-judson uppercase text-left mb-10'>
                     FOR ATHLETES
                   </h1>
-                  <p className='text-light text-lg md:text-xl lg:text-2xl font-roboto font-light uppercase text-left'>
+                  <p className='text-light text-lg md:text-xl lg:text-3xl font-condensed font-medium uppercase text-left'>
                     ELEVATE YOUR CAREER BEYOND THE COURT.
                   </p>
-                  <p className='text-light text-sm md:text-base font-roboto font-light text-left max-w-lg leading-relaxed'>
+                  <p className='text-light text-sm md:text-lg font-condensed font-normal text-left max-w-lg leading-relaxed'>
                     FROM JUNIORS TO PROFESSIONALS, WE HELP ATHLETES UNLOCK
                     OPPORTUNITIES THAT REFLECT THEIR TALENT, STORY, AND GOALS.
                   </p>
                   <div className='flex flex-col items-center justify-center w-full mt-10'>
-                    <p className='text-light text-2xl font-roboto font-semibold uppercase text-center'>
+                    <p className='text-light text-lg lg:text-3xl font-condensed font-normal uppercase text-center'>
                       READY TO TAKE THE NEXT STEP?
                     </p>
-                    <button className='bg-darkBlue text-light py-3 md:py-4 text-3xl font-judson font-medium uppercase w-full rounded-md'>
+                    <button className='bg-darkBlue text-light py-3 md:py-4 text-lg lg:text-4xl font-judson font-medium uppercase w-full rounded-md'>
                       APPLY FOR REPRESENTATION
                     </button>
                   </div>
                 </div>
                 {/* Lado Derecho - Servicios */}
-                <div className='flex flex-col items-start md:items-end justify-center min-h-full md:h-full w-full md:max-w-xl gap-10 mt-8 md:mt-0'>
+                <div className='flex flex-col items-start md:items-end justify-center min-h-full md:h-full w-full md:max-w-lg gap-10 mt-8 md:mt-0'>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       REPRESENTATION & SPONSORSHIPS
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light'>
                       SECURE PARTNERSHIPS THAT ALIGN WITH YOUR VALUES AND CAREER
                       ASPIRATIONS.
                     </p>
                   </div>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       BRAND DEVELOPMENT
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light'>
                       BUILD YOUR PERSONAL IDENTITY THROUGH MEDIA KITS,
                       STORYTELLING, AND IMAGE CONSULTING.
                     </p>
                   </div>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       MEDIA & SOCIAL GUIDANCE
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light'>
                       GROW YOUR VISIBILITY, ENGAGE YOUR AUDIENCE, AND ATTRACT
                       THE RIGHT BRANDS.
                     </p>
@@ -190,7 +190,7 @@ export default function Home() {
                 <h1 className='text-light text-3xl md:text-5xl lg:text-8xl font-judson uppercase text-center max-w-full wrap-break-word'>
                   Organizations
                 </h1>
-                <p className='text-light lg:text-2xl font-roboto font-light uppercase text-center max-w-full wrap-break-word'>
+                <p className='text-light lg:text-2xl font-condensed font-normal uppercase text-center max-w-full wrap-break-word'>
                   Authentic Partnerships That Deliver Impact.
                 </p>
               </div>
@@ -207,57 +207,57 @@ export default function Home() {
                   <h1 className='text-light text-3xl md:text-5xl lg:text-6xl font-judson uppercase text-left mb-10'>
                     FOR ORGANIZATIONS
                   </h1>
-                  <p className='text-light text-lg md:text-xl lg:text-2xl font-roboto font-light uppercase text-left'>
+                  <p className='text-light text-lg md:text-xl lg:text-2xl font-condensed font-normal uppercase text-left'>
                     AUTHENTIC PARTNERSHIPS THAT DELIVER IMPACT.
                   </p>
-                  <p className='text-light text-sm md:text-base font-roboto font-light text-left max-w-lg leading-relaxed'>
+                  <p className='text-light text-sm md:text-base font-condensed font-normal text-left max-w-lg leading-relaxed'>
                     WE HELP BRANDS NAVIGATE THE WORLD OF PADEL. FROM STRATEGY TO
                     EXECUTION - CONNECTING THEM WITH ATHLETES, CLUBS, AND
                     AUDIENCES THAT ALIGN WITH THEIR PURPOSE.
                   </p>
                   <div className='flex flex-col items-center justify-center w-full mt-10'>
-                    <p className='text-light text-2xl font-roboto font-semibold uppercase text-center'>
+                    <p className='text-light text-lg lg:text-3xl font-condensed font-normal uppercase text-center'>
                       LET&apos;S BUILD A PARTNERSHIP THAT WINS
                     </p>
-                    <button className='bg-darkBlue text-light py-3 md:py-4 text-3xl font-judson font-medium uppercase w-full rounded-md'>
+                    <button className='bg-darkBlue text-light py-3 md:py-4 text-lg lg:text-4xl font-judson font-medium uppercase w-full rounded-md'>
                       PARTNER WITH US
                     </button>
                   </div>
                 </div>
                 {/* Lado Derecho - Servicios */}
-                <div className='flex flex-col items-start md:items-end justify-center min-h-full md:h-full w-full md:max-w-xl gap-10 mt-8 md:mt-0'>
+                <div className='flex flex-col items-start md:items-end justify-center min-h-full md:h-full w-full md:max-w-lg gap-10 mt-8 md:mt-0'>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       ATHLETE COLLABORATIONS
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light'>
                       PARTNER WITH ATHLETES WHO EMBODY YOUR BRAND&apos;S MISSION
                       AND VALUES.
                     </p>
                   </div>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       Event & amp; Activation Planning
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light uppercase'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                       Bring your brand to life through tournaments, community
                       events, or experiential campaigns.
                     </p>
                   </div>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       Content & amp; Storytelling
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light uppercase'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                       Leverage authentic athlete voices to drive brand awareness
                       and engagement.
                     </p>
                   </div>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       Consulting & AMP; Market Entry
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light uppercase'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                       Enter the U.S. padel scene with confidence through
                       insights, partnerships, and local expertise.
                     </p>
@@ -293,7 +293,7 @@ export default function Home() {
                 <h1 className='text-light text-3xl md:text-5xl lg:text-8xl font-judson uppercase text-center max-w-full wrap-break-word'>
                   Clubs
                 </h1>
-                <p className='text-light lg:text-2xl font-roboto font-light uppercase text-center max-w-full wrap-break-word'>
+                <p className='text-light lg:text-2xl font-condensed font-normal uppercase text-center max-w-full wrap-break-word'>
                   Expand Your Reach. Strengthen Your Community.
                 </p>
               </div>
@@ -310,57 +310,57 @@ export default function Home() {
                   <h1 className='text-light text-3xl md:text-5xl lg:text-6xl font-judson uppercase text-left mb-10'>
                     FOR CLUBS
                   </h1>
-                  <p className='text-light text-lg md:text-xl lg:text-2xl font-roboto font-light uppercase text-left'>
+                  <p className='text-light text-lg md:text-xl lg:text-2xl font-condensed font-normal uppercase text-left'>
                     EXPAND YOUR REACH. STRENGTHEN YOUR COMMUNITY.
                   </p>
-                  <p className='text-light text-sm md:text-base font-roboto font-light text-left max-w-lg leading-relaxed'>
+                  <p className='text-light text-sm md:text-base font-condensed font-normal text-left max-w-lg leading-relaxed'>
                     WE PARTNER WITH CLUBS TO ELEVATE THEIR VISIBILITY, ATTRACT
                     SPONSORS, AND ENGAGE MEMBERS THROUGH CURATED EVENTS AND
                     MARKETING SUPPORT.
                   </p>
                   <div className='flex flex-col items-center justify-center w-full mt-10'>
-                    <p className='text-light text-2xl font-roboto font-semibold uppercase text-center'>
+                    <p className='text-light text-lg lg:text-3xl font-condensed font-normal uppercase text-center'>
                       LET&apos;S ELEVATE YOUR CLUB
                     </p>
-                    <button className='bg-darkBlue text-light py-3 md:py-4 text-3xl font-judson font-medium uppercase w-full rounded-md'>
+                    <button className='bg-darkBlue text-light py-3 md:py-4 text-lg lg:text-4xl font-judson font-medium uppercase w-full rounded-md'>
                       CONTACT US
                     </button>
                   </div>
                 </div>
                 {/* Lado Derecho - Servicios */}
-                <div className='flex flex-col items-start md:items-end justify-center min-h-full md:h-full w-full md:max-w-xl gap-10 mt-8 md:mt-0'>
+                <div className='flex flex-col items-start md:items-end justify-center min-h-full md:h-full w-full md:max-w-lg gap-10 mt-8 md:mt-0'>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       SPONSORSHIP STRATEGY & AMP; SUPPORT
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light uppercase'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                       IDENTIFY, NEGOTIATE, AND SECURE BRAND PARTNERS FOR YOUR
                       TOURNAMENTS OR CLUB EVENTS.
                     </p>
                   </div>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       ATHLETE ENGAGEMENT PROGRAMS
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light uppercase'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                       CONNECT WITH PROS FOR CLINICS, EXHIBITIONS, OR AMBASSADOR
                       ROLES THAT INSPIRE YOUR COMMUNITY.
                     </p>
                   </div>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       EVENT MANAGEMENT & AMP; ACTIVATION
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light uppercase'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                       FROM BRANDED TOURNAMENTS TO SEASONAL CAMPAIGNS, WE HELP
                       DESIGN EXPERIENCES THAT STAND OUT.
                     </p>
                   </div>
                   <div className='text-left'>
-                    <h3 className='text-light text-base md:text-lg lg:text-xl font-roboto font-bold uppercase mb-2'>
+                    <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                       MARKETING & AMP; COMMUNICATION CONSULTING
                     </h3>
-                    <p className='text-light text-xs md:text-sm lg:text-base font-roboto font-light uppercase'>
+                    <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                       POSITION YOUR CLUB AS A LEADER IN THE SPORT WITH STRONG
                       STORYTELLING AND DIGITAL PRESENCE.
                     </p>

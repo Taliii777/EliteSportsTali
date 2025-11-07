@@ -42,13 +42,7 @@ function Footer() {
                 Athletes
               </Link>
               <Link
-                href='/contact'
-                className='hover:text-red transition-colors hover:underline'
-              >
-                Contact
-              </Link>
-              <Link
-                href='/clubs-organizations'
+                href='/clubs'
                 className='hover:text-red transition-colors hover:underline'
               >
                 Clubs | Organizations
@@ -116,7 +110,7 @@ function Footer() {
           <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
             <p className='text-blue-dark text-xs font-body-regular text-center md:text-left'>
               © {new Date().getFullYear()} Elite Sport Management. All rights
-              reserved.
+              reserved. Developed by <a href="https://www.solware.agency/" className='underline'>Solware Agency</a>
             </p>
             <div className='flex gap-6 text-xs font-body-regular'>
               <Link

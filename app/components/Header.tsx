@@ -43,7 +43,7 @@ function Header() {
     <>
       <header
         className={`flex justify-between items-center py-2 px-5 fixed top-0 left-0 right-0 z-50 transition-all ${
-          isScrolled ? 'bg-light' : 'bg-transparent'
+          isScrolled ? 'bg-light/85 backdrop-blur-md' : 'bg-transparent'
         }`}
       >
         <Image
@@ -58,7 +58,7 @@ function Header() {
         />
         <nav>
           <ul
-            className={`hidden md:flex gap-4 text-lg font-roboto ${
+            className={`hidden md:flex gap-4 text-lg font-roboto font-light ${
               isScrolled ? 'text-black' : 'text-light'
             }`}
           >
@@ -78,16 +78,6 @@ function Header() {
                 }`}
               >
                 Athletes
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='/#footer'
-                className={`hover:underline ${
-                  isContactPage ? 'underline' : ''
-                }`}
-              >
-                Contact
               </Link>
             </li>
             <li>
@@ -121,7 +111,7 @@ function Header() {
 
       {/* Menú lateral */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-light z-50 transform transition-transform ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-light/85 backdrop-blur-md z-50 transform transition-transform ease-in-out md:hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -144,7 +134,7 @@ function Header() {
                 <Link
                   href='/about'
                   onClick={handleLinkClick}
-                  className={`text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2 ${isAboutPage ? 'underline' : ''}`}
+                  className={`text-lg font-roboto font-light text-black hover:text-black/70 transition-colors block py-2 ${isAboutPage ? 'underline' : ''}`}
                 >
                   About
                 </Link>
@@ -153,25 +143,16 @@ function Header() {
                 <Link
                   href='/athletes'
                   onClick={handleLinkClick}
-                  className={`text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2 ${isAthletesPage ? 'underline' : ''}`}
+                  className={`text-lg font-roboto font-light text-black hover:text-black/70 transition-colors block py-2 ${isAthletesPage ? 'underline' : ''}`}
                 >
                   Athletes
                 </Link>
               </li>
               <li>
                 <Link
-                  href='/#footer'
-                  onClick={handleLinkClick}
-                  className={`text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2 ${isContactPage ? 'underline' : ''}`}
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
                   href='/clubs'
                   onClick={handleLinkClick}
-                  className={`text-lg font-roboto text-black hover:text-black/70 transition-colors block py-2 ${isClubsPage ? 'underline' : ''}`}
+                  className={`text-lg font-roboto font-light text-black hover:text-black/70 transition-colors block py-2 ${isClubsPage ? 'underline' : ''}`}
                 >
                   Clubs | Organizations
                 </Link>

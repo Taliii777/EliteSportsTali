@@ -4,7 +4,7 @@ function AboutUs() {
   return (
     <div className='px-5 md:px-15 py-20'>
       <div className='flex justify-start gap-5 mb-20'>
-        <h1 className='text-darkBlue text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-inter uppercase'>
+        <h1 className='text-darkBlue text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold font-inter uppercase'>
           WHO WE ARE
         </h1>
       </div>
@@ -31,7 +31,7 @@ function AboutUs() {
           <br />
           wins.
         </p> */}
-        <p className='text-darkBlue text-sm font-roboto font-light text-left uppercase max-w-5xl'>
+        <p className='text-darkBlue text-lg font-condensed font-medium text-left uppercase max-w-5xl'>
           We are a sports representation and consulting agency dedicated to the
           growth of padel in the United States. Padel is the fastest-growing
           racquet sport in the world — yet in the U.S., athletes, clubs, and
@@ -44,7 +44,7 @@ function AboutUs() {
         </p>
       </div>
       <div className='flex justify-start gap-5 mb-20'>
-        <h1 className='text-darkBlue text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-inter uppercase'>
+        <h1 className='text-darkBlue text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold font-inter uppercase'>
           we work with
         </h1>
       </div>
@@ -68,7 +68,7 @@ function AboutUs() {
           <br />
           experiential activations that drive measurable results.
         </p> */}
-        <p className='text-darkBlue text-sm font-roboto font-light text-left uppercase max-w-5xl'>
+        <p className='text-darkBlue text-lg font-condensed font-medium text-left uppercase max-w-5xl'>
           Athletes. Clubs. Organizations We represent and guide players through
           every stage of their journey — securing sponsorships, refining
           personal brands, and opening doors to new professional and lifestyle
@@ -80,15 +80,15 @@ function AboutUs() {
         </p>
       </div>
       <div className='flex justify-center gap-5 mb-20'>
-        <h1 className='text-darkBlue text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-inter uppercase'>
+        <h1 className='text-darkBlue text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold font-inter uppercase'>
           Our founder
         </h1>
       </div>
       <div className='flex flex-col items-center justify-center gap-5 mb-20'>
-        <h2 className='text-darkBlue md:text-xl font-semibold font-mono uppercase mb-5 text-center'>
+        <h2 className='text-darkBlue md:text-2xl font-semibold font-condensed uppercase mb-5 text-center'>
           An Athlete&apos;s Drive. A Leader&apos;s Vision.
         </h2>
-        <p className='text-darkBlue text-sm font-roboto font-light text-center uppercase max-w-6xl'>
+        <p className='text-darkBlue text-lg font-condensed font-medium text-center uppercase max-w-6xl'>
           I&apos;m Dhanielly Quevedo — a top-ranked U.S. padel athlete and
           former Division I tennis player. Competing at an elite level has
           taught me discipline, resilience, and purpose. Off the court,

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Inter } from 'next/font/google';
+import { Geist, Geist_Mono, Inter, Roboto_Condensed, Judson, Roboto, Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -26,6 +26,35 @@ const inter = Inter({
   display: 'swap',
   preload: true,
   weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+const robotoCondensed = Roboto_Condensed({
+  variable: '--font-condensed',
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+});
+
+const judson = Judson({
+  variable: '--font-judson',
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  weight: ['400', '700'],
+});
+
+const roboto = Roboto({
+  variable: '--font-roboto',
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+});
+
+const robotoMono = Roboto_Mono({
+  variable: '--font-roboto-mono',
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -135,7 +164,7 @@ export default function RootLayout({
       <link rel='preload' href='/vector.webp' as='image' type='image/webp' />
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${robotoCondensed.variable} ${judson.variable} ${roboto.variable} ${robotoMono.variable} antialiased`}
       >
         <Header />
         {children}

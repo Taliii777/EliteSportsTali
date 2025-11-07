@@ -77,17 +77,17 @@ function FromOurClients() {
         <CarouselContent>
           {clients.map((client, index) => (
             <CarouselItem key={index}>
-              <div className='flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-20 w-full'>
+              <div className='flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-20 max-w-6xl mx-auto'>
                 <div className='flex flex-col items-start justify-center lg:gap-5'>
-                  <h3 className='text-darkBlue text-3xl sm:text-4xl lg:text-7xl font-extrabold font-inter uppercase'>
+                  <h3 className='text-darkBlue text-3xl sm:text-4xl lg:text-8xl font-extrabold font-inter uppercase'>
                     {client.title}
                   </h3>
-                  <p className='text-darkBlue lg:text-xl font-mono font-bold uppercase'>
+                  <p className='text-darkBlue lg:text-xl font-roboto-mono font-medium uppercase'>
                     {client.subtitle}
                   </p>
                 </div>
                 <div className='flex flex-col items-start justify-center max-w-2xl'>
-                  <div className='text-black text-xs lg:text-sm font-roboto font-light uppercase'>
+                  <div className='text-black text-xs lg:text-sm font-condensed font-normal uppercase'>
                     {client.description}
                   </div>
                 </div>

@@ -1,8 +1,97 @@
+'use client';
+
 import { ArrowDown, CopyrightIcon } from 'lucide-react';
 import Image from 'next/image';
+
+import { useState } from 'react';
 import FromOurClients from '../components/FromOurClients';
 
+interface AthleteInfo {
+  name: string;
+  image: string;
+  dob: string;
+  birthplace: string;
+  height: string;
+  uspaRanking: string;
+  biography: React.ReactElement;
+}
+
+const athletes: {
+  clementina: AthleteInfo;
+  guillermo: AthleteInfo;
+} = {
+  clementina: {
+    name: 'CLEMENTINA RIOBUENO',
+    image: '/hero.webp',
+    dob: '9/28/1994',
+    birthplace: 'BARQUISIMETO, VENEZUELA',
+    height: "5'8",
+    uspaRanking: '12',
+    biography: (
+      <>
+        Clementina Riobueno
+        <br />
+        Originally from Barquisimeto, Venezuela, Clementina Riobueno is a
+        standout athlete whose journey reflects discipline, passion, and
+        excellence. A former Division I tennis player for the University of
+        Miami, she joined the Hurricanes in 2013 as a full-time student-athlete
+        and earned her bachelor&apos;s degree in Marketing and Psychology in
+        2016.
+        <br />
+        <br />
+        Today, Clementina is recognized as one of the top female padel players
+        in the United States and a member of the U.S. National Padel Team.
+        Beyond her accomplishments on the court, she continues to make her mark
+        in the industry through her work at a leading global sports
+        agency—bridging her experience as an elite athlete with her expertise in
+        marketing and athlete representation.
+      </>
+    ),
+  },
+
+  guillermo: {
+    name: 'GUILLERMO CAGIGAS',
+    image: '/athleteshero.webp',
+    dob: '05/03/2000',
+    birthplace: 'MADRID, SPAIN',
+    height: "5'11",
+    uspaRanking: '14',
+    biography: (
+      <>
+        Guillermo Cagigas
+        <br />
+        Originally from Madrid, Spain, Guillermo Cagigas is one of the top padel
+        players competing in the USPA circuit. After an accomplished collegiate
+        tennis career at Longwood University—where he earned both his
+        bachelor&apos;s and master&apos;s degrees—Guillermo transitioned to
+        padel, quickly establishing himself as a standout talent known for his
+        precision, composure, and strategic play.
+        <br />
+        <br />
+        Now based in Miami, he serves as the Director of Platinum Padel Club,
+        leading player development and competitive programming while continuing
+        to compete at an elite level. Both on and off the court, Guillermo is
+        dedicated to advancing the growth of padel in the United States through
+        mentorship, performance, and his commitment to building the sport&apos;s
+        future.
+      </>
+    ),
+  },
+};
+
 export default function Athletes() {
+  const [selectedAthlete, setSelectedAthlete] = useState<AthleteInfo | null>(
+    null,
+  );
+
+  const handleAthleteClick = (athlete: AthleteInfo) => {
+    setSelectedAthlete(athlete);
+  };
+
+  const handleCloseAthlete = () => {
+    setSelectedAthlete(null);
+  };
+
   return (
     <>
       <div className='flex max-h-screen items-center justify-center font-sans relative h-screen w-full overflow-hidden'>
@@ -34,32 +123,150 @@ export default function Athletes() {
         </div>
       </div>
       <div className='px-5 md:px-15 py-20'>
-        <div className='flex flex-col md:flex-row justify-center items-center max-w-6xl mx-auto '>
-          <div className='relative w-full h-full justify-center items-center flex flex-col'>
-            <h3 className='text-darkBlue text-sm md:text-xl font-mono font-bold uppercase absolute bottom-10 text-center bg-light px-4 md:px-8 py-2 rounded-sm'>
-              CLEMENTINA RIOBUENO
-            </h3>
-            <Image
-              src='/hero.webp'
-              alt='athletes'
-              className='w-full h-full object-cover object-center aspect-9/12'
-              width={1920}
-              height={1080}
-            />
+        {/* Layout dinámico según el atleta seleccionado */}
+        {selectedAthlete && (
+          <div
+            className='flex flex-col md:flex-row h-full max-w-6xl mx-auto cursor-pointer'
+            onClick={handleCloseAthlete}
+          >
+            {/* Si es Clementina: imagen izquierda, info derecha */}
+            {/* Si es Guillermo: info izquierda, imagen derecha */}
+            {selectedAthlete.name === 'CLEMENTINA RIOBUENO' ? (
+              <>
+                {/* Imagen - izquierda (posición original de Clementina) */}
+                <div className='w-full relative'>
+                  <Image
+                    src={selectedAthlete.image}
+                    alt={selectedAthlete.name}
+                    className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
+                    width={1920}
+                    height={1080}
+                    priority
+                  />
+                </div>
+                {/* Panel de información - derecha */}
+                <div className='w-full bg-lightBlue p-8 md:p-12 flex flex-col justify-start'>
+                  <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
+                    {selectedAthlete.name}
+                  </h2>
+                  <div className='space-y-2 mb-6 font-condensed'>
+                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                      DOB:{' '}
+                      <span className='font-normal text-xl'>
+                        {selectedAthlete.dob}
+                      </span>
+                    </p>
+                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                      BIRTHPLACE:{' '}
+                      <span className='font-normal text-xl'>
+                        {selectedAthlete.birthplace}
+                      </span>
+                    </p>
+                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                      HEIGHT:{' '}
+                      <span className='font-normal text-xl'>
+                        {selectedAthlete.height}
+                      </span>
+                    </p>
+                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                      USPA RANKING:{' '}
+                      <span className='font-normal text-xl'>
+                        {selectedAthlete.uspaRanking}
+                      </span>
+                    </p>
+                  </div>
+                  <p className='text-darkBlue text-sm md:text-base font-condensed uppercase leading-relaxed'>
+                    {selectedAthlete.biography}
+                  </p>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Panel de información - izquierda (posición original de Clementina) */}
+                <div className='w-full bg-lightBlue p-8 md:p-12 flex flex-col justify-start'>
+                  <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
+                    {selectedAthlete.name}
+                  </h2>
+                  <div className='space-y-2 mb-6 font-condensed'>
+                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                      DOB:{' '}
+                      <span className='font-normal text-xl'>
+                        {selectedAthlete.dob}
+                      </span>
+                    </p>
+                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                      BIRTHPLACE:{' '}
+                      <span className='font-normal text-xl'>
+                        {selectedAthlete.birthplace}
+                      </span>
+                    </p>
+                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                      HEIGHT:{' '}
+                      <span className='font-normal text-xl'>
+                        {selectedAthlete.height}
+                      </span>
+                    </p>
+                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                      USPA RANKING:{' '}
+                      <span className='font-normal text-xl'>
+                        {selectedAthlete.uspaRanking}
+                      </span>
+                    </p>
+                  </div>
+                  <p className='text-darkBlue text-sm md:text-base font-condensed uppercase leading-relaxed'>
+                    {selectedAthlete.biography}
+                  </p>
+                </div>
+                {/* Imagen - derecha (posición original de Guillermo) */}
+                <div className='w-full relative'>
+                  <Image
+                    src={selectedAthlete.image}
+                    alt={selectedAthlete.name}
+                    className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
+                    width={1920}
+                    height={1080}
+                    priority
+                  />
+                </div>
+              </>
+            )}
           </div>
-          <div className='relative w-full h-full justify-center items-center flex flex-col'>
-            <h3 className='text-darkBlue text-sm md:text-xl font-mono font-bold uppercase absolute bottom-10 text-center bg-light px-4 md:px-8 py-2 rounded-sm'>
-              GUILLERMO CAGIGAS
-            </h3>
-            <Image
-              src='/athleteshero.webp'
-              alt='athletes'
-              className='w-full h-full object-cover object-[50%_100%] aspect-9/12'
-              width={1920}
-              height={1080}
-            />
+        )}
+        {/* Vista inicial: mostrar ambas imágenes como clickeables */}
+        {!selectedAthlete && (
+          <div className='flex flex-col md:flex-row justify-center items-center max-w-6xl mx-auto'>
+            <div
+              className='relative w-full cursor-pointer group'
+              onClick={() => handleAthleteClick(athletes.clementina)}
+            >
+              <h3 className='text-darkBlue text-sm md:text-lg font-mono font-bold uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light px-4 md:px-8 py-2 rounded-sm z-20'>
+                CLEMENTINA RIOBUENO
+              </h3>
+              <Image
+                src={athletes.clementina.image}
+                alt='Clementina Riobueno'
+                className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
+                width={1920}
+                height={1080}
+              />
+            </div>
+            <div
+              className='relative w-full cursor-pointer group'
+              onClick={() => handleAthleteClick(athletes.guillermo)}
+            >
+              <h3 className='text-darkBlue text-sm md:text-lg font-mono font-bold uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light px-4 md:px-8 py-2 rounded-sm z-20'>
+                GUILLERMO CAGIGAS
+              </h3>
+              <Image
+                src={athletes.guillermo.image}
+                alt='Guillermo Cagigas'
+                className='w-full h-full object-cover object-[50%_100%] aspect-9/12 transition-transform'
+                width={1920}
+                height={1080}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
       <FromOurClients />
       <div className='grid grid-cols-3'>
