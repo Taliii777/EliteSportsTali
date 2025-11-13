@@ -24,7 +24,7 @@ const items = [
   },
   {
     name: 'Elite',
-    image: '/eliteCorporatelogo.webp',
+    image: '/eliteCorpLogo.webp',
   },
   {
     name: 'Tower',
