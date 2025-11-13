@@ -111,17 +111,17 @@ export default function Home() {
                 } md:absolute md:translate-y-full md:group-hover:translate-y-0`}
               >
                 {/* Lado Izquierdo */}
-                <div className='flex flex-col items-center justify-between h-full max-w-7xl mx-auto'>
-                  <div className='flex flex-col items-center justify-center w-full'>
+                <div className='flex flex-col items-center justify-between h-full max-w-7xl mx-auto px-5'>
+                  <div className='flex flex-col items-center justify-center w-full mb-10 md:mb-0'>
                     <h1 className='text-light text-3xl md:text-5xl font-judson uppercase text-center'>
                       ELEVATE YOUR CAREER BEYOND THE COURT.
                     </h1>
-                    <p className='text-light text-sm md:text-lg font-condensed font-normal text-left leading-relaxed'>
+                    <p className='text-light text-sm md:text-lg font-condensed font-normal text-center leading-relaxed'>
                       FROM JUNIORS TO PROFESSIONALS, WE HELP ATHLETES UNLOCK
                       OPPORTUNITIES THAT REFLECT THEIR TALENT, STORY, AND GOALS.
                     </p>
                   </div>
-                  <div className='flex items-center justify-between gap-10 w-full'>
+                  <div className='flex flex-col md:flex-row items-center justify-between w-full gap-5 md:gap-0'>
                     <div className='text-left max-w-xs'>
                       <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                         REPRESENTATION & SPONSORSHIPS
@@ -189,13 +189,13 @@ export default function Home() {
               {/* Información adicional que aparece desde abajo - Layout de dos columnas */}
               <div
                 className={`${
-                  isOrganizationsOpen ? 'relative' : 'absolute'
+                  isClubsOpen ? 'relative' : 'absolute'
                 } inset-0 flex flex-col items-center transition-all duration-500 py-24 ${
-                  isOrganizationsOpen ? '' : 'translate-y-full'
+                  isClubsOpen ? '' : 'translate-y-full'
                 } md:absolute md:translate-y-full md:group-hover:translate-y-0`}
               >
                 {/* Lado Izquierdo */}
-                <div className='flex flex-col items-center justify-between h-full max-w-7xl mx-auto gap-10'>
+                <div className='flex flex-col items-center justify-between h-full max-w-7xl mx-auto px-5 gap-10'>
                   <div className='flex flex-col items-center justify-center w-full'>
                     <h1 className='text-light text-3xl md:text-5xl font-judson uppercase text-center'>
                       Expand Your Reach. Strengthen Your Community.
@@ -206,8 +206,8 @@ export default function Home() {
                       marketing support.
                     </p>
                   </div>
-                  <div className='flex items-center justify-between w-full'>
-                    <div className='flex flex-col items-left justify-center gap-10 max-w-lg'>
+                  <div className='flex flex-col md:flex-row items-center justify-between w-full gap-5 md:gap-0'>
+                    <div className='flex flex-col items-left justify-center gap-5 md:gap-10 max-w-lg'>
                       <div className='text-left'>
                         <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                           Sponsorship Strategy & Support
@@ -227,7 +227,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className='flex flex-col items-center justify-center gap-10 max-w-lg'>
+                    <div className='flex flex-col items-center justify-center gap-5 md:gap-10 max-w-lg'>
                       <div className='text-left'>
                         <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                           Event Management & Activation
@@ -292,7 +292,7 @@ export default function Home() {
                 } md:absolute md:translate-y-full md:group-hover:translate-y-0`}
               >
                 {/* Lado Izquierdo */}
-                <div className='flex flex-col items-center justify-between h-full max-w-7xl mx-auto gap-10'>
+                <div className='flex flex-col items-center justify-between h-full max-w-7xl mx-auto px-5 gap-10'>
                   <div className='flex flex-col items-center justify-center w-full'>
                     <h1 className='text-light text-3xl md:text-5xl font-judson uppercase text-center'>
                       Authentic Partnerships That Deliver Impact.
@@ -303,8 +303,8 @@ export default function Home() {
                       audiences that align with their purpose.
                     </p>
                   </div>
-                  <div className='flex items-center justify-between w-full'>
-                    <div className='flex flex-col items-left justify-center gap-10 max-w-lg'>
+                  <div className='flex flex-col md:flex-row items-center justify-between w-full gap-5 md:gap-0'>
+                    <div className='flex flex-col items-left justify-center gap-5 md:gap-10 max-w-lg'>
                       <div className='text-left'>
                         <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                           Athlete Collaborations
@@ -324,7 +324,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className='flex flex-col items-center justify-center gap-10 max-w-lg'>
+                    <div className='flex flex-col items-left justify-center gap-5 md:gap-10 max-w-lg'>
                       <div className='text-left'>
                         <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                           Content & Storytelling
