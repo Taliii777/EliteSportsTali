@@ -2,6 +2,7 @@ import { ArrowDown, CopyrightIcon } from 'lucide-react';
 import AboutUs from './components/AboutUs';
 import HomeAbout from './components/HomeAbout';
 import Founder from './components/Founder';
+import InstagramSection from './components/InstagramSection';
 
 import { CarouselElement } from './components/Carousel';
 
@@ -45,6 +46,7 @@ export default function Home() {
       </div>
       <AboutUs />
       <HomeAbout />
+      <InstagramSection />
       <Founder />
 
       <div className='bg-lightBlue px-15 py-20'>
