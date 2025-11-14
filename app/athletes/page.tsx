@@ -29,8 +29,6 @@ const athletes: {
     uspaRanking: '12',
     biography: (
       <>
-        Clementina Riobueno
-        <br />
         Originally from Barquisimeto, Venezuela, Clementina Riobueno is a
         standout athlete whose journey reflects discipline, passion, and
         excellence. A former Division I tennis player for the University of
@@ -58,8 +56,6 @@ const athletes: {
     uspaRanking: '14',
     biography: (
       <>
-        Guillermo Cagigas
-        <br />
         Originally from Madrid, Spain, Guillermo Cagigas is one of the top padel
         players competing in the USPA circuit. After an accomplished collegiate
         tennis career at Longwood University—where he earned both his
@@ -268,8 +264,8 @@ export default function Athletes() {
           </div>
         )}
       </div>
-        <FromOurClients />
-        <Desing />
+      <FromOurClients />
+      <Desing />
     </>
   );
 }

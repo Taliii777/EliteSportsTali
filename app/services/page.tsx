@@ -75,9 +75,6 @@ export default function Home() {
         </div>
       </div>
       <div className='bg-lightBlue px-10 py-20'>
-        <h2 className='text-black text-2xl font-roboto-mono font-normal uppercase mb-20'>
-          Services
-        </h2>
         <div className='flex flex-col items-center justify-center gap-10 w-full max-w-8xl mx-auto'>
           <div
             className='flex flex-col items-center justify-center gap-5 w-full relative cursor-pointer overflow-hidden group'
@@ -365,7 +362,7 @@ export default function Home() {
           from you!
         </p>
         <a
-          href='#'
+          href='mailto:dhany@elitesportsmgt.com'
           className='text-light text-lg font-condensed font-medium text-center uppercase tracking-widest bg-redd px-10 py-5 rounded-lg'
         >
           Contact Us!

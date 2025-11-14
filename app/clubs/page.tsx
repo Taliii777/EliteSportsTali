@@ -63,7 +63,7 @@ export default function Clubs() {
         <div className='absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/30'>
           <div className='flex flex-col items-center justify-center h-full w-full px-4 max-w-full overflow-hidden'>
             <h1 className='text-light font-inter text-4xl md:text-5xl lg:text-8xl font-extrabold uppercase max-w-full wrap-break-word text-center'>
-              clubs
+              clubs &
               <br />
               organizations
             </h1>

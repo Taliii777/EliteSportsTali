@@ -19,8 +19,8 @@ function Footer() {
               className='w-[180px] h-auto object-contain brightness-0'
             />
             <p className='text-blue-dark text-sm font-body-regular leading-relaxed max-w-xs'>
-              Excellence in sports representation. Empowering athletes and
-              building authentic partnerships.
+              Excellence in sports representation.
+              <br />• Empowering athletes. Inspiring partnerships.
             </p>
           </div>
 
@@ -30,10 +30,10 @@ function Footer() {
             </h3>
             <nav className='flex flex-col gap-3'>
               <Link
-                href='/about'
+                href='/services'
                 className='hover:text-red transition-colors hover:underline'
               >
-                About
+                Services
               </Link>
               <Link
                 href='/athletes'
@@ -121,12 +121,6 @@ function Footer() {
                 className='text-blue-dark hover:text-red transition-colors hover:underline'
               >
                 Privacy Policy
-              </Link>
-              <Link
-                href='/terms'
-                className='text-blue-dark hover:text-red transition-colors hover:underline'
-              >
-                Terms of Service
               </Link>
             </div>
           </div>

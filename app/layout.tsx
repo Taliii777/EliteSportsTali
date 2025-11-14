@@ -8,10 +8,9 @@ import {
   Roboto,
   Roboto_Mono,
 } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Partners from './components/Partners';
+import LayoutWrapper from './components/LayoutWrapper';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -61,6 +60,28 @@ const roboto = Roboto({
 const robotoMono = Roboto_Mono({
   variable: '--font-roboto-mono',
   subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+});
+
+// Fuente personalizada Neue Haas Display Bold
+const neueHaasDisplayBold = localFont({
+  src: '../public/fonts/NeueHaasDisplayBold.ttf',
+  variable: '--font-neue-haas-bold',
+  display: 'swap',
+  preload: true,
+});
+
+const neueHaasDisplayRoman = localFont({
+  src: '../public/fonts/NeueHaasDisplayRoman.ttf',
+  variable: '--font-neue-haas-roman',
+  display: 'swap',
+  preload: true,
+});
+
+const dentonCondensedRegular = localFont({
+  src: '../public/fonts/DentonXCondensedTest-Regular.otf',
+  variable: '--font-denton-condensed-regular',
   display: 'swap',
   preload: true,
 });
@@ -222,12 +243,9 @@ export default function RootLayout({
       />
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${robotoCondensed.variable} ${judson.variable} ${roboto.variable} ${robotoMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${robotoCondensed.variable} ${judson.variable} ${roboto.variable} ${robotoMono.variable} ${neueHaasDisplayBold.variable} ${neueHaasDisplayRoman.variable} ${dentonCondensedRegular.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Partners />
-        <Footer />
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

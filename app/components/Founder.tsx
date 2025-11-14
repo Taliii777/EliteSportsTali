@@ -32,7 +32,7 @@ function Founder() {
         <Image
           src='/founder.webp'
           alt='about 1'
-          className='w-full h-full object-cover object-top lg:object-center rounded-xl max-h-[700px]'
+          className='w-full h-full object-cover object-[50%_0%] rounded-xl max-h-[700px]'
           width={1920}
           height={1080}
         />

@@ -26,7 +26,7 @@ const clients = [
         goes beyond collaboration — it{"'"}s about building a movement that
         inspires and uplifts the next generation of women in sport.&rdquo;
         <br />
-        <br />- Andi
+        <br />- Andi Neugarten
       </>
     ),
   },
