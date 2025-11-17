@@ -50,9 +50,6 @@ export default function Home() {
       <Founder />
 
       <div className='bg-lightBlue px-15 py-20'>
-        <h2 className='text-black text-2xl font-neue-roman uppercase mb-14'>
-          Press
-        </h2>
         <div className='w-full h-full flex items-center justify-center'>
           <CarouselElement />
         </div>

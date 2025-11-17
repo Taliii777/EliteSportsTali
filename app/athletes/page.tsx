@@ -212,7 +212,7 @@ export default function Athletes() {
                         </span>
                       </p>
                     </div>
-                    <p className='text-darkBlue text-sm md:text-lg font-condensed leading-relaxed'>
+                    <p className='text-darkBlue text-sm md:text-lg font-neue-roman leading-relaxed'>
                       {selectedAthlete.biography}
                     </p>
                   </div>
@@ -239,7 +239,7 @@ export default function Athletes() {
               className='relative w-full cursor-pointer group'
               onClick={() => handleAthleteClick(athletes.clementina)}
             >
-              <h3 className='text-darkBlue text-sm md:text-lg font-mono font-bold uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light w-full max-w-xs py-2 rounded-sm z-20'>
+              <h3 className='text-darkBlue text-sm md:text-xl font-denton uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light w-full max-w-xs py-2 rounded-sm z-20'>
                 CLEMENTINA RIOBUENO
               </h3>
               <Image
@@ -254,7 +254,7 @@ export default function Athletes() {
               className='relative w-full cursor-pointer group'
               onClick={() => handleAthleteClick(athletes.guillermo)}
             >
-              <h3 className='text-darkBlue text-sm md:text-lg font-mono font-bold uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light w-full max-w-xs py-2 rounded-sm z-20 '>
+              <h3 className='text-darkBlue text-sm md:text-xl font-denton uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light w-full max-w-xs py-2 rounded-sm z-20 '>
                 GUILLERMO JIMENEZ CAGIGAS
               </h3>
               <Image

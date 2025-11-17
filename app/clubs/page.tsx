@@ -133,7 +133,7 @@ export default function Clubs() {
               className='relative w-full h-full justify-center items-center flex flex-col cursor-pointer group'
               onClick={() => handleClubClick(clubs.sixLoveSports)}
             >
-              <h3 className='text-darkBlue text-sm md:text-xl font-mono font-bold uppercase absolute bottom-10 text-center bg-light px-4 md:px-8 py-2 rounded-sm z-20'>
+              <h3 className='text-darkBlue text-sm md:text-xl font-denton uppercase absolute bottom-10 text-center bg-light px-4 md:px-8 py-2 rounded-sm z-20'>
                 6 love sports
               </h3>
               <Image

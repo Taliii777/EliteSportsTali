@@ -37,7 +37,7 @@ function InstagramSection() {
   if (loading) {
     return (
       <div className='px-15 py-20'>
-        <h2 className='text-black text-2xl font-roboto-mono font-normal uppercase mb-14'>
+        <h2 className='text-black text-2xl font-neue-roman font-normal uppercase mb-14'>
           FOLLOW THE JOURNEY
         </h2>
         <div className='flex items-center justify-center py-20'>
@@ -50,7 +50,7 @@ function InstagramSection() {
   if (items.length === 0) {
     return (
       <div className='px-15 py-20'>
-        <h2 className='text-black text-2xl font-roboto-mono font-normal uppercase mb-14'>
+        <h2 className='text-black text-2xl font-neue-roman font-normal uppercase mb-14'>
           FOLLOW THE JOURNEY
         </h2>
         <div className='flex items-center justify-center py-20'>
@@ -62,7 +62,7 @@ function InstagramSection() {
 
   return (
     <div className='px-15 py-20'>
-      <h2 className='text-black text-2xl font-roboto-mono font-normal uppercase mb-14'>
+      <h2 className='text-black text-2xl font-neue-roman font-normal uppercase mb-14'>
         FOLLOW THE JOURNEY
       </h2>
       {/* <InfiniteMovingCards items={items} speed='normal' /> */}
