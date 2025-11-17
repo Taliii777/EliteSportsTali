@@ -122,7 +122,7 @@ export default function Athletes() {
         {/* Layout dinámico según el atleta seleccionado */}
         {selectedAthlete && (
           <div
-            className='flex flex-col md:flex-row h-[60vh] max-w-6xl mx-auto cursor-pointer'
+            className='flex flex-col md:flex-row h-full max-w-6xl mx-auto cursor-pointer'
             onClick={handleCloseAthlete}
           >
             {/* Si es Clementina: imagen izquierda, info derecha */}
@@ -130,11 +130,11 @@ export default function Athletes() {
             {selectedAthlete.name === 'CLEMENTINA RIOBUENO' ? (
               <>
                 {/* Imagen - izquierda (posición original de Clementina) */}
-                <div className='w-full h-full relative'>
+                <div className='w-full relative'>
                   <Image
                     src={selectedAthlete.image}
                     alt={selectedAthlete.name}
-                    className='w-full h-full object-cover object-center transition-transform'
+                    className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
                     width={1920}
                     height={1080}
                     priority
@@ -218,11 +218,11 @@ export default function Athletes() {
                   </div>
                 </div>
                 {/* Imagen - derecha (posición original de Guillermo) */}
-                <div className='w-full h-full relative'>
+                <div className='w-full relative'>
                   <Image
                     src={selectedAthlete.image}
                     alt={selectedAthlete.name}
-                    className='w-full h-full object-cover object-[50%_100%] transition-transform'
+                    className='w-full h-full object-cover object-[50%_100%] aspect-9/12 transition-transform'
                     width={1920}
                     height={1080}
                     priority
@@ -234,36 +234,36 @@ export default function Athletes() {
         )}
         {/* Vista inicial: mostrar ambas imágenes como clickeables */}
         {!selectedAthlete && (
-          <div className='flex flex-col md:flex-row justify-center items-center max-w-6xl mx-auto h-[60vh]'>
+          <div className='flex flex-col md:flex-row justify-center items-center max-w-6xl mx-auto'>
             <div
-              className='relative w-full h-full cursor-pointer group'
+              className='relative w-full cursor-pointer group'
               onClick={() => handleAthleteClick(athletes.clementina)}
             >
-              <Image
-                src={athletes.clementina.image}
-                alt='Clementina Riobueno'
-                className='w-full h-full object-cover object-center transition-transform'
-                width={1920}
-                height={1080}
-              />
               <h3 className='text-darkBlue text-sm md:text-lg font-mono font-bold uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light w-full max-w-xs py-2 rounded-sm z-20'>
                 CLEMENTINA RIOBUENO
               </h3>
-            </div>
-            <div
-              className='relative w-full h-full cursor-pointer group'
-              onClick={() => handleAthleteClick(athletes.guillermo)}
-            >
               <Image
-                src={athletes.guillermo.image}
-                alt='Guillermo Cagigas'
-                className='w-full h-full object-cover object-[50%_100%] transition-transform'
+                src={athletes.clementina.image}
+                alt='Clementina Riobueno'
+                className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
                 width={1920}
                 height={1080}
               />
+            </div>
+            <div
+              className='relative w-full cursor-pointer group'
+              onClick={() => handleAthleteClick(athletes.guillermo)}
+            >
               <h3 className='text-darkBlue text-sm md:text-lg font-mono font-bold uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light w-full max-w-xs py-2 rounded-sm z-20 '>
                 GUILLERMO JIMENEZ CAGIGAS
               </h3>
+              <Image
+                src={athletes.guillermo.image}
+                alt='Guillermo Cagigas'
+                className='w-full h-full object-cover object-[50%_100%] aspect-9/12 transition-transform'
+                width={1920}
+                height={1080}
+              />
             </div>
           </div>
         )}

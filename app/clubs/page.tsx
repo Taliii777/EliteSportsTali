@@ -23,12 +23,12 @@ const clubs: {
     description: (
       <>
         6 love sports (6LS) is the largest and fastest-growing women&apos;s
-        padel community in the united states.
+        padel community in the United States.
         <br />
         <br />a movement built on empowerment, community, and opportunity. we
         bring together active, health-conscious, and socially connected women
         who love the sport of padel and the culture around it. recognized by the
-        u.s. padel association (USPA) as a certified premier community, 6LS
+        U.S. Padel Association (USPA) as a certified premier community, 6LS
         represents excellence, credibility, and leadership in growing
         women&apos;s padel nationwide.
       </>
@@ -83,15 +83,15 @@ export default function Clubs() {
         {/* Layout dinámico según el club seleccionado */}
         {selectedClub && (
           <div
-            className='flex flex-col md:flex-row h-[60vh] max-w-6xl mx-auto cursor-pointer'
+            className='flex flex-col md:flex-row max-w-6xl mx-auto cursor-pointer'
             onClick={handleCloseClub}
           >
             {/* Imagen - izquierda */}
-            <div className='w-full h-full relative'>
+            <div className='w-full relative'>
               <Image
                 src='/about-2.webp'
                 alt={selectedClub.name}
-                className='w-full h-full object-cover object-center transition-transform'
+                className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
                 width={1920}
                 height={1080}
                 priority
@@ -126,21 +126,21 @@ export default function Clubs() {
         )}
         {/* Vista inicial: mostrar imagen como clickeable */}
         {!selectedClub && (
-          <div className='flex justify-center items-center max-w-6xl mx-auto h-[60vh]'>
+          <div className='flex justify-center items-center max-w-6xl mx-auto'>
             <div
               className='relative w-full h-full justify-center items-center flex flex-col cursor-pointer group'
               onClick={() => handleClubClick(clubs.sixLoveSports)}
             >
-              <Image
-                src='/clubs-and-org.webp'
-                alt='6 Love Sports'
-                className='w-full h-full object-cover object-center transition-transform'
-                width={1920}
-                height={1080}
-              />
               <h3 className='text-darkBlue text-sm md:text-xl font-mono font-bold uppercase absolute bottom-10 text-center bg-light px-4 md:px-8 py-2 rounded-sm z-20'>
                 6 love sports
               </h3>
+              <Image
+                src='/clubs-and-org.webp'
+                alt='6 Love Sports'
+                className='w-full h-full object-cover object-center aspect-video transition-transform'
+                width={1920}
+                height={1080}
+              />
             </div>
           </div>
         )}
