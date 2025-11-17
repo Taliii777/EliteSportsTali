@@ -108,7 +108,7 @@ export default function Home() {
                 } md:absolute md:translate-y-full md:group-hover:translate-y-0`}
               >
                 {/* Lado Izquierdo */}
-                <div className='flex flex-col items-center justify-between h-full max-w-7xl mx-auto px-5'>
+                <div className='flex flex-col items-center justify-between h-full w-full mx-auto'>
                   <div className='flex flex-col items-center justify-center w-full mb-10 md:mb-0'>
                     <h1 className='text-light text-3xl md:text-5xl font-judson uppercase text-center'>
                       ELEVATE YOUR CAREER BEYOND THE COURT.
@@ -118,7 +118,7 @@ export default function Home() {
                       OPPORTUNITIES THAT REFLECT THEIR TALENT, STORY, AND GOALS.
                     </p>
                   </div>
-                  <div className='flex flex-col md:flex-row items-center justify-between w-full gap-5 md:gap-0'>
+                  <div className='flex flex-col md:flex-row items-center justify-around w-full gap-5 md:gap-0'>
                     <div className='text-left max-w-xs'>
                       <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                         REPRESENTATION & SPONSORSHIPS
@@ -192,7 +192,7 @@ export default function Home() {
                 } md:absolute md:translate-y-full md:group-hover:translate-y-0`}
               >
                 {/* Lado Izquierdo */}
-                <div className='flex flex-col items-center justify-between h-full max-w-7xl mx-auto px-5 gap-10'>
+                <div className='flex flex-col items-center justify-between h-full w-full mx-auto gap-10'>
                   <div className='flex flex-col items-center justify-center w-full'>
                     <h1 className='text-light text-3xl md:text-5xl font-judson uppercase text-center'>
                       Expand Your Reach. Strengthen Your Community.
@@ -203,7 +203,7 @@ export default function Home() {
                       marketing support.
                     </p>
                   </div>
-                  <div className='flex flex-col md:flex-row items-center justify-between w-full gap-5 md:gap-0'>
+                  <div className='flex flex-col md:flex-row items-center justify-around w-full md:gap-0'>
                     <div className='flex flex-col items-left justify-center gap-5 md:gap-10 max-w-lg'>
                       <div className='text-left'>
                         <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
@@ -211,6 +211,7 @@ export default function Home() {
                         </h3>
                         <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                           Identify, negotiate, and secure brand partners for
+                          <br />
                           your tournaments or club events.
                         </p>
                       </div>
@@ -220,18 +221,19 @@ export default function Home() {
                         </h3>
                         <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                           Connect with pros for clinics, exhibitions, or
+                          <br />
                           ambassador roles that inspire your community.
                         </p>
                       </div>
                     </div>
-                    <div className='flex flex-col items-center justify-center gap-5 md:gap-10 max-w-lg'>
+                    <div className='flex flex-col items-left justify-center gap-5 md:gap-10 max-w-lg'>
                       <div className='text-left'>
                         <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                           Event Management & Activation
                         </h3>
                         <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
-                          From branded tournaments to seasonal campaigns, we
-                          help design experiences that stand out.
+                          From branded tournaments to seasonal campaigns,
+                          <br /> we help design experiences that stand out.
                         </p>
                       </div>
                       <div className='text-left'>
@@ -240,7 +242,8 @@ export default function Home() {
                         </h3>
                         <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                           Position your club as a leader in the sport with
-                          strong storytelling and digital presence.
+                          strong <br />
+                          storytelling and digital presence.
                         </p>
                       </div>
                     </div>
@@ -289,7 +292,7 @@ export default function Home() {
                 } md:absolute md:translate-y-full md:group-hover:translate-y-0`}
               >
                 {/* Lado Izquierdo */}
-                <div className='flex flex-col items-center justify-between h-full max-w-7xl mx-auto px-5 gap-10'>
+                <div className='flex flex-col items-center justify-between h-full w-full mx-auto gap-10'>
                   <div className='flex flex-col items-center justify-center w-full'>
                     <h1 className='text-light text-3xl md:text-5xl font-judson uppercase text-center'>
                       Authentic Partnerships That Deliver Impact.
@@ -300,15 +303,15 @@ export default function Home() {
                       audiences that align with their purpose.
                     </p>
                   </div>
-                  <div className='flex flex-col md:flex-row items-center justify-between w-full gap-5 md:gap-0'>
+                  <div className='flex flex-col md:flex-row items-center justify-around w-full md:gap-0'>
                     <div className='flex flex-col items-left justify-center gap-5 md:gap-10 max-w-lg'>
                       <div className='text-left'>
                         <h3 className='text-light text-base md:text-lg lg:text-2xl font-condensed font-normal uppercase mb-2'>
                           Athlete Collaborations
                         </h3>
                         <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
-                          Partner with athletes who embody your brand’s mission
-                          and values.
+                          Partner with athletes who embody your
+                          <br /> brand’s mission and values.
                         </p>
                       </div>
                       <div className='text-left'>
@@ -317,7 +320,7 @@ export default function Home() {
                         </h3>
                         <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
                           Bring your brand to life through tournaments,
-                          community events, or experiential campaigns.
+                          <br /> community events, or experiential campaigns.
                         </p>
                       </div>
                     </div>
@@ -327,8 +330,8 @@ export default function Home() {
                           Content & Storytelling
                         </h3>
                         <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
-                          Leverage authentic athlete voices to drive brand
-                          awareness and engagement.
+                          Leverage authentic athlete voices to
+                          <br /> drive brand awareness and engagement.
                         </p>
                       </div>
                       <div className='text-left'>
@@ -336,8 +339,9 @@ export default function Home() {
                           Consulting & Market Entry
                         </h3>
                         <p className='text-light text-xs md:text-md lg:text-base font-condensed font-light uppercase'>
-                          Enter the U.S. padel scene with confidence through
-                          insights, partnerships, and local expertise.
+                          Enter the U.S. padel scene with confidence <br />{' '}
+                          through insights, partnerships, and
+                          <br /> local expertise.
                         </p>
                       </div>
                     </div>

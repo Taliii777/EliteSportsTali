@@ -48,7 +48,7 @@ const athletes: {
   },
 
   guillermo: {
-    name: 'GUILLERMO CAGIGAS',
+    name: 'GUILLERMO JIMENEZ CAGIGAS',
     image: '/athleteshero.webp',
     dob: '05/03/2000',
     birthplace: 'MADRID, SPAIN',
@@ -56,9 +56,9 @@ const athletes: {
     uspaRanking: '14',
     biography: (
       <>
-        Originally from Madrid, Spain, Guillermo Cagigas is one of the top padel
-        players competing in the USPA circuit. After an accomplished collegiate
-        tennis career at Longwood University—where he earned both his
+        Originally from Madrid, Spain, Guillermo Jimenez Cagigas is one of the
+        top padel players competing in the USPA circuit. After an accomplished
+        collegiate tennis career at Longwood University—where he earned both his
         bachelor&apos;s and master&apos;s degrees—Guillermo transitioned to
         padel, quickly establishing himself as a standout talent known for his
         precision, composure, and strategic play.
@@ -122,7 +122,7 @@ export default function Athletes() {
         {/* Layout dinámico según el atleta seleccionado */}
         {selectedAthlete && (
           <div
-            className='flex flex-col md:flex-row h-full max-w-6xl mx-auto cursor-pointer'
+            className='flex flex-col md:flex-row h-[60vh] max-w-6xl mx-auto cursor-pointer'
             onClick={handleCloseAthlete}
           >
             {/* Si es Clementina: imagen izquierda, info derecha */}
@@ -130,95 +130,99 @@ export default function Athletes() {
             {selectedAthlete.name === 'CLEMENTINA RIOBUENO' ? (
               <>
                 {/* Imagen - izquierda (posición original de Clementina) */}
-                <div className='w-full relative'>
+                <div className='w-full h-full relative'>
                   <Image
                     src={selectedAthlete.image}
                     alt={selectedAthlete.name}
-                    className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
+                    className='w-full h-full object-cover object-center transition-transform'
                     width={1920}
                     height={1080}
                     priority
                   />
                 </div>
                 {/* Panel de información - derecha */}
-                <div className='w-full bg-lightBlue p-8 md:p-12 flex flex-col justify-start'>
-                  <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
-                    {selectedAthlete.name}
-                  </h2>
-                  <div className='space-y-2 mb-6 font-condensed'>
-                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
-                      DOB:{' '}
-                      <span className='font-normal text-xl'>
-                        {selectedAthlete.dob}
-                      </span>
-                    </p>
-                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
-                      BIRTHPLACE:{' '}
-                      <span className='font-normal text-xl'>
-                        {selectedAthlete.birthplace}
-                      </span>
-                    </p>
-                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
-                      HEIGHT:{' '}
-                      <span className='font-normal text-xl'>
-                        {selectedAthlete.height}
-                      </span>
-                    </p>
-                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
-                      USPA RANKING:{' '}
-                      <span className='font-normal text-xl'>
-                        {selectedAthlete.uspaRanking}
-                      </span>
+                <div className='w-full bg-lightBlue flex flex-col justify-start'>
+                  <div className='p-8 md:p-12'>
+                    <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
+                      {selectedAthlete.name}
+                    </h2>
+                    <div className='space-y-2 mb-6 font-condensed'>
+                      <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                        DOB:{' '}
+                        <span className='font-normal text-xl'>
+                          {selectedAthlete.dob}
+                        </span>
+                      </p>
+                      <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                        BIRTHPLACE:{' '}
+                        <span className='font-normal text-xl'>
+                          {selectedAthlete.birthplace}
+                        </span>
+                      </p>
+                      <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                        HEIGHT:{' '}
+                        <span className='font-normal text-xl'>
+                          {selectedAthlete.height}
+                        </span>
+                      </p>
+                      <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                        USPA RANKING:{' '}
+                        <span className='font-normal text-xl'>
+                          {selectedAthlete.uspaRanking}
+                        </span>
+                      </p>
+                    </div>
+                    <p className='text-darkBlue text-sm md:text-base font-condensed uppercase leading-relaxed'>
+                      {selectedAthlete.biography}
                     </p>
                   </div>
-                  <p className='text-darkBlue text-sm md:text-base font-condensed uppercase leading-relaxed'>
-                    {selectedAthlete.biography}
-                  </p>
                 </div>
               </>
             ) : (
               <>
                 {/* Panel de información - izquierda (posición original de Clementina) */}
-                <div className='w-full bg-lightBlue p-8 md:p-12 flex flex-col justify-start'>
-                  <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
-                    {selectedAthlete.name}
-                  </h2>
-                  <div className='space-y-2 mb-6 font-condensed'>
-                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
-                      DOB:{' '}
-                      <span className='font-normal text-xl'>
-                        {selectedAthlete.dob}
-                      </span>
-                    </p>
-                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
-                      BIRTHPLACE:{' '}
-                      <span className='font-normal text-xl'>
-                        {selectedAthlete.birthplace}
-                      </span>
-                    </p>
-                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
-                      HEIGHT:{' '}
-                      <span className='font-normal text-xl'>
-                        {selectedAthlete.height}
-                      </span>
-                    </p>
-                    <p className='text-darkBlue text-base md:text-2xl font-semibold'>
-                      USPA RANKING:{' '}
-                      <span className='font-normal text-xl'>
-                        {selectedAthlete.uspaRanking}
-                      </span>
+                <div className='w-full bg-lightBlue flex flex-col justify-start'>
+                  <div className='p-8 md:p-12'>
+                    <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
+                      {selectedAthlete.name}
+                    </h2>
+                    <div className='space-y-2 mb-6 font-condensed'>
+                      <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                        DOB:{' '}
+                        <span className='font-normal text-xl'>
+                          {selectedAthlete.dob}
+                        </span>
+                      </p>
+                      <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                        BIRTHPLACE:{' '}
+                        <span className='font-normal text-xl'>
+                          {selectedAthlete.birthplace}
+                        </span>
+                      </p>
+                      <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                        HEIGHT:{' '}
+                        <span className='font-normal text-xl'>
+                          {selectedAthlete.height}
+                        </span>
+                      </p>
+                      <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                        USPA RANKING:{' '}
+                        <span className='font-normal text-xl'>
+                          {selectedAthlete.uspaRanking}
+                        </span>
+                      </p>
+                    </div>
+                    <p className='text-darkBlue text-sm md:text-base font-condensed uppercase leading-relaxed'>
+                      {selectedAthlete.biography}
                     </p>
                   </div>
-                  <p className='text-darkBlue text-sm md:text-base font-condensed uppercase leading-relaxed'>
-                    {selectedAthlete.biography}
-                  </p>
                 </div>
                 {/* Imagen - derecha (posición original de Guillermo) */}
-                <div className='w-full relative'>
+                <div className='w-full h-full relative'>
                   <Image
                     src={selectedAthlete.image}
                     alt={selectedAthlete.name}
-                    className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
+                    className='w-full h-full object-cover object-[50%_100%] transition-transform'
                     width={1920}
                     height={1080}
                     priority
@@ -230,36 +234,36 @@ export default function Athletes() {
         )}
         {/* Vista inicial: mostrar ambas imágenes como clickeables */}
         {!selectedAthlete && (
-          <div className='flex flex-col md:flex-row justify-center items-center max-w-6xl mx-auto'>
+          <div className='flex flex-col md:flex-row justify-center items-center max-w-6xl mx-auto h-[60vh]'>
             <div
-              className='relative w-full cursor-pointer group'
+              className='relative w-full h-full cursor-pointer group'
               onClick={() => handleAthleteClick(athletes.clementina)}
             >
-              <h3 className='text-darkBlue text-sm md:text-lg font-mono font-bold uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light px-4 md:px-8 py-2 rounded-sm z-20'>
-                CLEMENTINA RIOBUENO
-              </h3>
               <Image
                 src={athletes.clementina.image}
                 alt='Clementina Riobueno'
-                className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
+                className='w-full h-full object-cover object-center transition-transform'
                 width={1920}
                 height={1080}
               />
+              <h3 className='text-darkBlue text-sm md:text-lg font-mono font-bold uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light w-full max-w-xs py-2 rounded-sm z-20'>
+                CLEMENTINA RIOBUENO
+              </h3>
             </div>
             <div
-              className='relative w-full cursor-pointer group'
+              className='relative w-full h-full cursor-pointer group'
               onClick={() => handleAthleteClick(athletes.guillermo)}
             >
-              <h3 className='text-darkBlue text-sm md:text-lg font-mono font-bold uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light px-4 md:px-8 py-2 rounded-sm z-20'>
-                GUILLERMO CAGIGAS
-              </h3>
               <Image
                 src={athletes.guillermo.image}
                 alt='Guillermo Cagigas'
-                className='w-full h-full object-cover object-[50%_100%] aspect-9/12 transition-transform'
+                className='w-full h-full object-cover object-[50%_100%] transition-transform'
                 width={1920}
                 height={1080}
               />
+              <h3 className='text-darkBlue text-sm md:text-lg font-mono font-bold uppercase absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center bg-light w-full max-w-xs py-2 rounded-sm z-20 '>
+                GUILLERMO JIMENEZ CAGIGAS
+              </h3>
             </div>
           </div>
         )}

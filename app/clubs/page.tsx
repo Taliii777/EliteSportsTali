@@ -8,7 +8,6 @@ import Desing from '../components/Desing';
 
 interface ClubInfo {
   name: string;
-  image: string;
   since: string;
   founder: string;
   description: React.ReactElement;
@@ -19,7 +18,6 @@ const clubs: {
 } = {
   sixLoveSports: {
     name: '6 LOVE SPORTS',
-    image: '/clubs-and-org.webp',
     since: '2024',
     founder: 'ANDREA NEUGARTEN',
     description: (
@@ -27,10 +25,9 @@ const clubs: {
         6 LOVE SPORTS (6LS) IS THE LARGEST AND FASTEST-GROWING WOMEN&apos;S
         PADEL COMMUNITY IN THE UNITED STATES.
         <br />
-        <br />
-        A MOVEMENT BUILT ON EMPOWERMENT, COMMUNITY, AND OPPORTUNITY. WE BRING
-        TOGETHER ACTIVE, HEALTH-CONSCIOUS, AND SOCIALLY CONNECTED WOMEN WHO
-        LOVE THE SPORT OF PADEL AND THE CULTURE AROUND IT. RECOGNIZED BY THE
+        <br />A MOVEMENT BUILT ON EMPOWERMENT, COMMUNITY, AND OPPORTUNITY. WE
+        BRING TOGETHER ACTIVE, HEALTH-CONSCIOUS, AND SOCIALLY CONNECTED WOMEN
+        WHO LOVE THE SPORT OF PADEL AND THE CULTURE AROUND IT. RECOGNIZED BY THE
         U.S. PADEL ASSOCIATION (USPA) AS A CERTIFIED PREMIER COMMUNITY, 6LS
         REPRESENTS EXCELLENCE, CREDIBILITY, AND LEADERSHIP IN GROWING
         WOMEN&apos;S PADEL NATIONWIDE.
@@ -86,62 +83,64 @@ export default function Clubs() {
         {/* Layout dinámico según el club seleccionado */}
         {selectedClub && (
           <div
-            className='flex flex-col md:flex-row h-full max-w-6xl mx-auto cursor-pointer'
+            className='flex flex-col md:flex-row h-[60vh] max-w-6xl mx-auto cursor-pointer'
             onClick={handleCloseClub}
           >
             {/* Imagen - izquierda */}
-            <div className='w-full relative'>
+            <div className='w-full h-full relative'>
               <Image
-                src={selectedClub.image}
+                src='/about-2.webp'
                 alt={selectedClub.name}
-                className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
+                className='w-full h-full object-cover object-center transition-transform'
                 width={1920}
                 height={1080}
                 priority
               />
             </div>
             {/* Panel de información - derecha */}
-            <div className='w-full bg-lightBlue p-8 md:p-12 flex flex-col justify-start'>
-              <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
-                {selectedClub.name}
-              </h2>
-              <div className='space-y-2 mb-6 font-condensed'>
-                <p className='text-darkBlue text-base md:text-2xl font-semibold'>
-                  SINCE:{' '}
-                  <span className='font-normal text-xl'>
-                    {selectedClub.since}
-                  </span>
-                </p>
-                <p className='text-darkBlue text-base md:text-2xl font-semibold'>
-                  FOUNDER:{' '}
-                  <span className='font-normal text-xl'>
-                    {selectedClub.founder}
-                  </span>
+            <div className='w-full bg-lightBlue flex flex-col justify-start'>
+              <div className='p-8 md:p-12'>
+                <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
+                  {selectedClub.name}
+                </h2>
+                <div className='space-y-2 mb-6 font-condensed'>
+                  <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                    SINCE:{' '}
+                    <span className='font-normal text-xl'>
+                      {selectedClub.since}
+                    </span>
+                  </p>
+                  <p className='text-darkBlue text-base md:text-2xl font-semibold'>
+                    FOUNDER:{' '}
+                    <span className='font-normal text-xl'>
+                      {selectedClub.founder}
+                    </span>
+                  </p>
+                </div>
+                <p className='text-darkBlue text-sm md:text-base font-condensed uppercase leading-relaxed'>
+                  {selectedClub.description}
                 </p>
               </div>
-              <p className='text-darkBlue text-sm md:text-base font-condensed uppercase leading-relaxed'>
-                {selectedClub.description}
-              </p>
             </div>
           </div>
         )}
         {/* Vista inicial: mostrar imagen como clickeable */}
         {!selectedClub && (
-          <div className='flex justify-center items-center max-w-6xl mx-auto'>
+          <div className='flex justify-center items-center max-w-6xl mx-auto h-[60vh]'>
             <div
               className='relative w-full h-full justify-center items-center flex flex-col cursor-pointer group'
               onClick={() => handleClubClick(clubs.sixLoveSports)}
             >
-              <h3 className='text-darkBlue text-sm md:text-xl font-mono font-bold uppercase absolute bottom-10 text-center bg-light px-4 md:px-8 py-2 rounded-sm z-20'>
-                6 love sports
-              </h3>
               <Image
-                src={clubs.sixLoveSports.image}
+                src='/clubs-and-org.webp'
                 alt='6 Love Sports'
-                className='w-full h-full object-cover object-center aspect-video transition-transform'
+                className='w-full h-full object-cover object-center transition-transform'
                 width={1920}
                 height={1080}
               />
+              <h3 className='text-darkBlue text-sm md:text-xl font-mono font-bold uppercase absolute bottom-10 text-center bg-light px-4 md:px-8 py-2 rounded-sm z-20'>
+                6 love sports
+              </h3>
             </div>
           </div>
         )}
