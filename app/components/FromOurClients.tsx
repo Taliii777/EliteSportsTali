@@ -31,7 +31,7 @@ const clients = [
     ),
   },
   {
-    title: 'GUILLERMO GAGIGAS',
+    title: 'GUILLERMO JIMENEZ CAGIGAS',
     subtitle: 'PADEL PLAYER',
     description: (
       <>
@@ -45,7 +45,7 @@ const clients = [
         how ESM creates real opportunities for athletes to evolve and make an
         impact beyond the court.&rdquo;
         <br />
-        <br />- Guillermo Gagigas
+        <br />- Guillermo Jimenez Cagigas
       </>
     ),
   },
@@ -73,7 +73,7 @@ function FromOurClients() {
       <h2 className='text-black text-2xl font-roboto font-medium uppercase mb-20'>
         from our clients
       </h2>
-      <Carousel className='w-full lg:max-w-[80%] mx-auto lg:py-40'>
+      <Carousel className='w-full lg:max-w-[90%] mx-auto'>
         <CarouselContent>
           {clients.map((client, index) => (
             <CarouselItem key={index}>
@@ -87,7 +87,7 @@ function FromOurClients() {
                   </p>
                 </div>
                 <div className='flex flex-col items-start justify-center max-w-2xl'>
-                  <div className='text-black text-xs lg:text-sm font-condensed font-normal uppercase'>
+                  <div className='text-black text-xs lg:text-base font-condensed font-normal'>
                     {client.description}
                   </div>
                 </div>
