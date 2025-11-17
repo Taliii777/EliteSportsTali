@@ -2,6 +2,7 @@
 
 import { InfiniteMovingCards } from './ui/infinite-moving-cards';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface InstagramItem {
   name: string;
@@ -64,7 +65,31 @@ function InstagramSection() {
       <h2 className='text-black text-2xl font-roboto-mono font-normal uppercase mb-14'>
         FOLLOW THE JOURNEY
       </h2>
-      <InfiniteMovingCards items={items} speed='normal' />
+      {/* <InfiniteMovingCards items={items} speed='normal' /> */}
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-10'>
+        {items.map((item) => (
+          <a
+            className='relative max-w-full w-full h-[500px] overflow-hidden rounded-2xl cursor-pointer transition-opacity hover:opacity-80'
+            href={item.link || '#'}
+            target='_blank'
+            rel='noopener noreferrer'
+            key={item.link}
+            onClick={(e) => {
+              if (!item.link) {
+                e.preventDefault();
+              }
+            }}
+          >
+            <Image
+              src={item.image}
+              alt={item.name}
+              width={1920}
+              height={1080}
+              className='w-full h-full object-cover object-center'
+            />
+          </a>
+        ))}
+      </div>
     </div>
   );
 }

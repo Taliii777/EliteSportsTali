@@ -4,15 +4,15 @@ function Founder() {
     <div className='bg-redd px-15 py-20 grid lg:grid-cols-5 justify-center items-center gap-5'>
       <div className='lg:col-span-3 max-w-5xl mx-auto'>
         <div className='flex flex-col items-center justify-center gap-5 mb-10'>
-          <h1 className='text-light text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold font-inter uppercase'>
+          <h1 className='text-light text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-denton uppercase'>
             Our founder
           </h1>
-          <p className='text-light md:text-2xl font-semibold font-condensed uppercase text-center'>
+          <p className='text-light md:text-2xl font-neue-bold uppercase text-center'>
             An Athlete&apos;s Drive. A Leader&apos;s Vision.
           </p>
         </div>
         <div className='flex flex-col items-center justify-center gap-5'>
-          <p className='text-light text-lg font-condensed font-normal text-center max-w-6xl'>
+          <p className='text-light text-lg font-neue-roman text-center max-w-6xl'>
             I&apos;m Dhanielly Quevedo — a top-ranked U.S. padel athlete and
             former Division I tennis player. Competing at an elite level has
             taught me discipline, resilience, and purpose. Off the court,

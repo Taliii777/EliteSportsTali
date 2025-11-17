@@ -100,7 +100,7 @@ export default function Athletes() {
         />
         <div className='absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/30'>
           <div className='flex flex-col items-center justify-center h-full w-full px-4 max-w-full overflow-hidden'>
-            <h1 className='text-light text-4xl md:text-5xl lg:text-8xl font-extrabold uppercase max-w-full wrap-break-word text-center'>
+            <h1 className='text-light text-4xl md:text-5xl lg:text-8xl font-denton uppercase max-w-full wrap-break-word text-center'>
               Athletes
             </h1>
             <ArrowDown className='size-5 text-light animate-bounce md:hidden mt-5' />
@@ -110,7 +110,7 @@ export default function Athletes() {
               <CopyrightIcon className='size-4 text-light' />
             </div>
             <div className='items-center justify-center gap-20 hidden md:flex'>
-              <p className='text-light text-lg font-roboto font-light uppercase'>
+              <p className='text-light text-lg font-neue-roman uppercase'>
                 scroll down
               </p>
               <ArrowDown className='size-5 text-light animate-bounce' />
@@ -143,10 +143,10 @@ export default function Athletes() {
                 {/* Panel de información - derecha */}
                 <div className='w-full bg-lightBlue flex flex-col justify-start'>
                   <div className='p-8 md:p-12'>
-                    <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
+                    <h2 className='text-darkBlue text-3xl font-denton font-semibold uppercase mb-6'>
                       {selectedAthlete.name}
                     </h2>
-                    <div className='space-y-2 mb-6 font-condensed'>
+                    <div className='space-y-2 mb-6 font-neue-roman'>
                       <p className='text-darkBlue text-base md:text-2xl font-semibold'>
                         DOB:{' '}
                         <span className='font-normal text-xl'>
@@ -172,7 +172,7 @@ export default function Athletes() {
                         </span>
                       </p>
                     </div>
-                    <p className='text-darkBlue text-sm md:text-lg font-condensed leading-relaxed'>
+                    <p className='text-darkBlue text-sm md:text-lg font-neue-roman leading-relaxed'>
                       {selectedAthlete.biography}
                     </p>
                   </div>
@@ -183,10 +183,10 @@ export default function Athletes() {
                 {/* Panel de información - izquierda (posición original de Clementina) */}
                 <div className='w-full bg-lightBlue flex flex-col justify-start'>
                   <div className='p-8 md:p-12'>
-                    <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
+                    <h2 className='text-darkBlue text-3xl font-denton font-semibold uppercase mb-6'>
                       {selectedAthlete.name}
                     </h2>
-                    <div className='space-y-2 mb-6 font-condensed'>
+                    <div className='space-y-2 mb-6 font-neue-roman'>
                       <p className='text-darkBlue text-base md:text-2xl font-semibold'>
                         DOB:{' '}
                         <span className='font-normal text-xl'>

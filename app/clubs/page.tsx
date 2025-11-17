@@ -10,6 +10,7 @@ interface ClubInfo {
   name: string;
   since: string;
   founder: string;
+  image: string;
   description: React.ReactElement;
 }
 
@@ -20,6 +21,7 @@ const clubs: {
     name: '6 LOVE SPORTS',
     since: '2024',
     founder: 'ANDREA NEUGARTEN',
+    image: '/clubs-and-org.webp',
     description: (
       <>
         6 love sports (6LS) is the largest and fastest-growing women&apos;s
@@ -59,7 +61,7 @@ export default function Clubs() {
         />
         <div className='absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/30'>
           <div className='flex flex-col items-center justify-center h-full w-full px-4 max-w-full overflow-hidden'>
-            <h1 className='text-light font-inter text-4xl md:text-5xl lg:text-8xl font-extrabold uppercase max-w-full wrap-break-word text-center'>
+            <h1 className='text-light text-4xl md:text-5xl lg:text-8xl font-denton uppercase max-w-full wrap-break-word text-center'>
               clubs &
               <br />
               organizations
@@ -71,7 +73,7 @@ export default function Clubs() {
               <CopyrightIcon className='size-4 text-light' />
             </div>
             <div className='items-center justify-center gap-20 hidden md:flex'>
-              <p className='text-light text-lg font-roboto font-light uppercase'>
+              <p className='text-light text-lg font-neue-roman uppercase'>
                 scroll down
               </p>
               <ArrowDown className='size-5 text-light animate-bounce' />
@@ -89,7 +91,7 @@ export default function Clubs() {
             {/* Imagen - izquierda */}
             <div className='w-full relative'>
               <Image
-                src='/about-2.webp'
+                src={selectedClub.image}
                 alt={selectedClub.name}
                 className='w-full h-full object-cover object-center aspect-9/12 transition-transform'
                 width={1920}
@@ -100,10 +102,10 @@ export default function Clubs() {
             {/* Panel de información - derecha */}
             <div className='w-full bg-lightBlue flex flex-col justify-start'>
               <div className='p-8 md:p-12'>
-                <h2 className='text-darkBlue text-3xl font-condensed font-semibold uppercase mb-6'>
+                <h2 className='text-darkBlue text-3xl font-denton font-semibold uppercase mb-6'>
                   {selectedClub.name}
                 </h2>
-                <div className='space-y-2 mb-6 font-condensed'>
+                <div className='space-y-2 mb-6 font-neue-roman'>
                   <p className='text-darkBlue text-base md:text-2xl font-semibold'>
                     SINCE:{' '}
                     <span className='font-normal text-xl'>
@@ -117,7 +119,7 @@ export default function Clubs() {
                     </span>
                   </p>
                 </div>
-                <p className='text-darkBlue text-sm md:text-lg font-condensed leading-relaxed'>
+                <p className='text-darkBlue text-sm md:text-lg font-neue-roman leading-relaxed'>
                   {selectedClub.description}
                 </p>
               </div>
@@ -135,7 +137,7 @@ export default function Clubs() {
                 6 love sports
               </h3>
               <Image
-                src='/clubs-and-org.webp'
+                src={clubs.sixLoveSports.image}
                 alt='6 Love Sports'
                 className='w-full h-full object-cover object-center aspect-video transition-transform'
                 width={1920}

@@ -21,7 +21,7 @@ export async function GET() {
 
     // Extraer las últimas 5 imágenes del feed
     const items = feed.items
-      .slice(0, 10)
+      .slice(0, 4)
       .map((item) => {
         // Extraer la imagen del contenido HTML o del enclosure
         let imageUrl = '';

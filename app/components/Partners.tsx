@@ -38,7 +38,7 @@ const items = [
 function Partners() {
   return (
     <div className='flex flex-col items-center justify-center  p-20'>
-      <h1 className='text-darkBlue lg:text-6xl sm:text-5xl text-3xl font-roboto-mono font-medium uppercase text-center mb-20'>
+      <h1 className='text-darkBlue lg:text-6xl sm:text-5xl text-3xl font-denton uppercase text-center mb-20'>
         partners
       </h1>
       <InfiniteMovingCards items={items} speed='normal'/>

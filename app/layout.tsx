@@ -64,24 +64,24 @@ const robotoMono = Roboto_Mono({
   preload: true,
 });
 
+const dentonCondensedRegular = localFont({
+  src: '../public/fonts/DentonXCondensedTest-Regular.otf',
+  variable: '--font-denton',
+  display: 'swap',
+  preload: true,
+});
+
 // Fuente personalizada Neue Haas Display Bold
 const neueHaasDisplayBold = localFont({
   src: '../public/fonts/NeueHaasDisplayBold.ttf',
-  variable: '--font-neue-haas-bold',
+  variable: '--font-neue-bold',
   display: 'swap',
   preload: true,
 });
 
 const neueHaasDisplayRoman = localFont({
   src: '../public/fonts/NeueHaasDisplayRoman.ttf',
-  variable: '--font-neue-haas-roman',
-  display: 'swap',
-  preload: true,
-});
-
-const dentonCondensedRegular = localFont({
-  src: '../public/fonts/DentonXCondensedTest-Regular.otf',
-  variable: '--font-denton-condensed-regular',
+  variable: '--font-neue-roman',
   display: 'swap',
   preload: true,
 });

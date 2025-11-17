@@ -12,11 +12,11 @@ function Footer() {
     <footer id='footer' className='border-t border-blue-dark border-opacity-15'>
       <div className='max-w-[1280px] mx-auto px-10 py-16'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-12 mb-12'>
-          <div className='flex flex-col gap-4'>
+          <div className='flex flex-col'>
             <img
-              src='/eliteManageLogo.svg'
+              src='/svg/footer-logo.svg'
               alt='Elite Sports Management'
-              className='w-[180px] h-auto object-contain brightness-0'
+              className='w-[200px] h-auto brightness-0'
             />
             <p className='text-blue-dark text-sm font-body-regular leading-relaxed max-w-xs'>
               Excellence in sports representation.

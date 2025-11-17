@@ -31,7 +31,7 @@ const clients = [
     ),
   },
   {
-    title: 'GUILLERMO JIMENEZ CAGIGAS',
+    title: 'GUILLERMO CAGIGAS',
     subtitle: 'PADEL PLAYER',
     description: (
       <>
@@ -77,7 +77,7 @@ function FromOurClients() {
         <CarouselContent>
           {clients.map((client, index) => (
             <CarouselItem key={index}>
-              <div className='flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-20 max-w-6xl mx-auto'>
+              <div className='flex flex-col xl:flex-row items-start xl:items-center justify-between gap-10 lg:gap-20 max-w-6xl mx-auto'>
                 <div className='flex flex-col items-start justify-center lg:gap-5'>
                   <h3 className='text-darkBlue text-3xl sm:text-4xl lg:text-8xl font-extrabold font-inter uppercase'>
                     {client.title}

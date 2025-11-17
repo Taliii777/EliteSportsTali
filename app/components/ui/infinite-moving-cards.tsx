@@ -13,6 +13,7 @@ export const InfiniteMovingCards = ({
   items: {
     name: string;
     image: string;
+    link?: string;
   }[];
   direction?: 'left' | 'right';
   speed?: 'fast' | 'normal' | 'slow';
@@ -85,9 +86,17 @@ export const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => (
-          <li
-            className='relative max-w-full shrink-0 rounded-2xl px-8 py-6 w-[300px]'
+          <a
+            className='relative max-w-full shrink-0 rounded-2xl px-8 py-6 w-[300px] cursor-pointer transition-opacity hover:opacity-80'
+            href={item.link || '#'}
+            target='_blank'
+            rel='noopener noreferrer'
             key={item.name}
+            onClick={(e) => {
+              if (!item.link) {
+                e.preventDefault();
+              }
+            }}
           >
             <Image
               src={item.image}
@@ -96,7 +105,7 @@ export const InfiniteMovingCards = ({
               height={1080}
               className='w-full h-full object-contain object-center'
             />
-          </li>
+          </a>
         ))}
       </ul>
     </div>
