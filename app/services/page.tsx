@@ -62,15 +62,13 @@ export default function Home() {
         </div>
       </div>
       <div className='px-5 md:px-15 py-20'>
-        <div className='flex justify-center gap-5 mb-20 max-w-5xl mx-auto'>
+        <div className='flex flex-col justify-center gap-10 max-w-6xl mx-auto'>
           <h1 className='text-darkBlue text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-denton uppercase text-center'>
             ELEVATE YOUR CAREER BEYOND THE COURT.
           </h1>
-        </div>
-        <div className='flex justify-end gap-5'>
-          <p className='text-darkBlue text-lg font-neue-roman text-center uppercase max-w-3xl mx-auto tracking-widest'>
-            FROM JUNIORS TO PROFESSIONALS, WE HELP ATHLETES UNLOCK OPPORTUNITIES
-            THAT REFLECT THEIR TALENT, STORY, AND GOALS.
+          <p className='text-darkBlue text-lg font-neue-roman text-center max-w-3xl mx-auto tracking-widest'>
+            From Juniors to Professionals, we help athletes unlock opportunities
+            that reflect their talent, story, and goals.
           </p>
         </div>
       </div>
@@ -113,7 +111,7 @@ export default function Home() {
                     <h1 className='text-light text-3xl md:text-5xl font-denton uppercase text-center'>
                       ELEVATE YOUR CAREER BEYOND THE COURT.
                     </h1>
-                    <p className='text-light text-sm md:text-lg font-neue-roman text-center leading-relaxed'>
+                    <p className='text-light text-sm md:text-lg font-neue-roman text-center leading-relaxed max-w-6xl mx-auto'>
                       FROM JUNIORS TO PROFESSIONALS, WE HELP ATHLETES UNLOCK
                       OPPORTUNITIES THAT REFLECT THEIR TALENT, STORY, AND GOALS.
                     </p>
@@ -124,7 +122,8 @@ export default function Home() {
                         REPRESENTATION & SPONSORSHIPS
                       </h3>
                       <p className='text-light text-xs md:text-md lg:text-lg font-neue-roman font-light'>
-                        Secure partnerships that align with your values and career aspirations.
+                        Secure partnerships that align with your values and
+                        career aspirations.
                       </p>
                     </div>
                     <div className='text-left max-w-xs'>
@@ -132,7 +131,8 @@ export default function Home() {
                         BRAND DEVELOPMENT
                       </h3>
                       <p className='text-light text-xs md:text-md lg:text-lg font-neue-roman font-light'>
-                        Build your personal identity through media kits, storytelling, and image consulting.
+                        Build your personal identity through media kits,
+                        storytelling, and image consulting.
                       </p>
                     </div>
                     <div className='text-left max-w-xs'>
@@ -140,7 +140,8 @@ export default function Home() {
                         MEDIA & SOCIAL GUIDANCE
                       </h3>
                       <p className='text-light text-xs md:text-md lg:text-lg font-neue-roman font-light'>
-                        Grow your visibility, engage your audience, and attract the right brands.
+                        Grow your visibility, engage your audience, and attract
+                        the right brands.
                       </p>
                     </div>
                   </div>
@@ -194,7 +195,7 @@ export default function Home() {
                     <h1 className='text-light text-3xl md:text-5xl font-denton uppercase text-center'>
                       Expand Your Reach. Strengthen Your Community.
                     </h1>
-                    <p className='text-light text-sm md:text-lg font-neue-roman font-normal text-center leading-relaxed uppercase'>
+                    <p className='text-light text-sm md:text-lg font-neue-roman font-normal text-center leading-relaxed uppercase max-w-6xl mx-auto'>
                       We partner with clubs to elevate their visibility, attract
                       sponsors, and engage members through curated events and
                       marketing support.
@@ -294,7 +295,7 @@ export default function Home() {
                     <h1 className='text-light text-3xl md:text-5xl font-denton uppercase text-center'>
                       Authentic Partnerships That Deliver Impact.
                     </h1>
-                    <p className='text-light text-sm md:text-lg font-neue-roman font-normal text-center leading-relaxed uppercase'>
+                    <p className='text-light text-sm md:text-lg font-neue-roman font-normal text-center leading-relaxed uppercase max-w-6xl mx-auto'>
                       We help brands navigate the world of padel. from strategy
                       to execution , connecting them with athletes, clubs, and
                       audiences that align with their purpose.

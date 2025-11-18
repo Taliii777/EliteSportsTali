@@ -20,7 +20,8 @@ function Footer() {
             />
             <p className='text-blue-dark text-sm font-neue-roman leading-relaxed max-w-xs'>
               Excellence in sports representation.
-              <br />• Empowering athletes. Inspiring partnerships.
+              <br />
+              Empowering athletes. Inspiring partnerships.
             </p>
           </div>
 

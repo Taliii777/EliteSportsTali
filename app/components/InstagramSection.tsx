@@ -38,7 +38,7 @@ function InstagramSection() {
     return (
       <div className='px-15 py-20'>
         <h2 className='text-black text-2xl font-neue-roman font-normal uppercase mb-14'>
-          FOLLOW THE JOURNEY
+          FOLLOW US ON INSTAGRAM
         </h2>
         <div className='flex items-center justify-center py-20'>
           <p className='text-blue-dark'>Cargando...</p>
@@ -51,7 +51,7 @@ function InstagramSection() {
     return (
       <div className='px-15 py-20'>
         <h2 className='text-black text-2xl font-neue-roman font-normal uppercase mb-14'>
-          FOLLOW THE JOURNEY
+          FOLLOW US ON INSTAGRAM
         </h2>
         <div className='flex items-center justify-center py-20'>
           <p className='text-blue-dark'>No hay publicaciones disponibles</p>
@@ -63,7 +63,7 @@ function InstagramSection() {
   return (
     <div className='px-15 py-20'>
       <h2 className='text-black text-2xl font-neue-roman font-normal uppercase mb-14'>
-        FOLLOW THE JOURNEY
+        FOLLOW US ON INSTAGRAM
       </h2>
       {/* <InfiniteMovingCards items={items} speed='normal' /> */}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-10'>
