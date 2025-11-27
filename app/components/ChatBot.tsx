@@ -52,6 +52,104 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
     scrollToBottom();
   }, [messages]);
 
+  // Function to render text with clickable links
+  const renderTextWithLinks = (text: string) => {
+    const parts: (string | JSX.Element)[] = [];
+    let lastIndex = 0;
+    
+    // Email pattern
+    const emailPattern = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
+    // Phone pattern (with +1 or similar)
+    const phonePattern = /(\+1\s?\(?\d{3}\)?\s?\d{3}[-.]?\d{4})/g;
+    // Instagram pattern
+    const instagramPattern = /(@[a-zA-Z0-9._-]+)/g;
+    
+    // Combine all patterns
+    const allPatterns = [
+      { pattern: emailPattern, type: 'email' },
+      { pattern: phonePattern, type: 'phone' },
+      { pattern: instagramPattern, type: 'instagram' }
+    ];
+    
+    // Find all matches
+    const matches: Array<{ index: number; length: number; text: string; type: string; url: string }> = [];
+    
+    allPatterns.forEach(({ pattern, type }) => {
+      let match;
+      while ((match = pattern.exec(text)) !== null) {
+        let url = '';
+        if (type === 'email') {
+          url = `mailto:${match[0]}`;
+        } else if (type === 'phone') {
+          // Check if this phone number appears after "WhatsApp" or "💬"
+          const beforeMatch = text.substring(Math.max(0, match.index - 20), match.index).toLowerCase();
+          const isWhatsApp = beforeMatch.includes('whatsapp') || beforeMatch.includes('💬');
+          
+          const phoneNumber = match[0].replace(/\D/g, '');
+          if (isWhatsApp) {
+            url = `https://wa.me/${phoneNumber}`;
+          } else {
+            url = `tel:${phoneNumber}`;
+          }
+        } else if (type === 'instagram') {
+          const username = match[0].substring(1); // Remove @
+          url = `https://www.instagram.com/${username}/`;
+        }
+        matches.push({
+          index: match.index,
+          length: match[0].length,
+          text: match[0],
+          type,
+          url
+        });
+      }
+    });
+    
+    // Sort matches by index
+    matches.sort((a, b) => a.index - b.index);
+    
+    // Remove overlapping matches (keep first)
+    const nonOverlappingMatches: typeof matches = [];
+    let lastEnd = 0;
+    matches.forEach(match => {
+      if (match.index >= lastEnd) {
+        nonOverlappingMatches.push(match);
+        lastEnd = match.index + match.length;
+      }
+    });
+    
+    // Build parts array
+    nonOverlappingMatches.forEach((match, i) => {
+      // Add text before match
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+      
+      // Add link
+      const isExternalLink = match.type === 'instagram' || (match.type === 'phone' && match.url.startsWith('https://wa.me'));
+      parts.push(
+        <a
+          key={`link-${i}`}
+          href={match.url}
+          target={isExternalLink ? '_blank' : undefined}
+          rel={isExternalLink ? 'noopener noreferrer' : undefined}
+          className="underline hover:opacity-80 font-semibold cursor-pointer"
+        >
+          {match.text}
+        </a>
+      );
+      
+      lastIndex = match.index + match.length;
+    });
+    
+    // Add remaining text
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+    
+    return parts.length > 0 ? parts : text;
+  };
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -82,7 +180,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "To apply for representation, please submit your information via the Athlete Inquiry form on our website. We work with elite athletes, rising talent, and players who align with our performance and brand values. There's no upfront fee - compensation depends on structure, deliverables, and commissions.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Learn more about services', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'learn about athlete services' ||
@@ -93,7 +191,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "ESM offers athletes:\n• Brand partnerships\n• Sponsorship negotiation\n• Career strategy\n• Content collaboration\n• Event representation\n\nWe actively pitch athletes to aligned brands and negotiate deals on their behalf. We also support brand positioning, partnerships, and long-term visibility strategies.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Apply for representation', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'sponsorship & partnerships'
@@ -103,7 +201,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "Yes! ESM actively pitches athletes to aligned brands and negotiates deals on their behalf. We can help expand existing partnerships or manage new opportunities. We work with wellness, lifestyle, health tech, sportswear, beverages, hospitality, travel, and consumer brands.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Learn about services', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'social media & branding help'
@@ -113,7 +211,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "Absolutely! ESM supports brand positioning, partnerships, and long-term visibility strategies. We help athletes build their personal brand through strategic partnerships and content collaboration.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Learn about services', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     }
     // Brand sub-options
@@ -125,7 +223,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "ESM connects brands with elite athletes for high-impact sponsorships. We identify goals, match brands with athletes, build sponsorship packages, and execute activations. Packages include brand visibility, athlete deliverables, content, hospitality, signage, and product placement.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Enter the padel market', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'sponsor an event'
@@ -135,7 +233,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "ESM creates sponsorship opportunities for tournaments, leagues, influencer activations, exhibitions, corporate experiences, and club events. We create decks, pitch partners, negotiate deals, and manage deliverables. Brands can activate with branded courts, product areas, sampling, signage, and athlete interactions.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Create a custom activation', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'enter the padel market'
@@ -145,7 +243,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "Absolutely! ESM guides brands from strategy to execution in the padel market. We work with wellness, lifestyle, health tech, sportswear, beverages, hospitality, travel, and consumer brands. We can help with custom activation concepts tailored to your brand goals.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Sponsor an athlete', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'create a custom activation'
@@ -155,7 +253,17 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "Yes! ESM designs bespoke experiences tailored to brand goals. We handle concept development, deck creation, sponsor pitching, logistics support, and on-site execution. We can also bring top U.S. athletes to events and coordinate appearances, exhibitions, or meet-and-greet moments.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Sponsor an event', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
+      };
+    } else if (
+      input === 'see partnership examples'
+    ) {
+      response = {
+        id: messageId,
+        text: "ESM has worked with various brands across wellness, lifestyle, health tech, sportswear, beverages, hospitality, travel, and consumer sectors. Our partnerships include athlete sponsorships, event activations, custom brand experiences, and long-term collaborations. For specific examples and case studies, please reach out to us directly.",
+        isBot: true,
+        timestamp: new Date(),
+        options: ['Contact ESM', 'Back to main menu'],
       };
     }
     // Club sub-options
@@ -167,7 +275,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "ESM helps clubs secure sponsorships through deck creation, partner pitching, deal negotiation, and deliverable management. We create professional, branded sponsorship and event decks. We offer both event-based and long-term partnership structures.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Host an event', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'build partnerships'
@@ -177,7 +285,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "Yes! ESM facilitates sustainable corporate partnerships and community-building collaborations. We help clubs form long-term partnerships and manage everything from onboarding to renewals and year-long deliverables.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Secure sponsorship', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'host an event'
@@ -187,7 +295,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "ESM supports event production, coordination, and sponsor integration at clubs. We host networking events, influencer activations, exhibition matches, panel discussions, and branded experiences. We can also bring athletes to your club and handle social media content including photography, videography, and influencer distribution.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Bring athletes to the club', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'bring athletes to the club'
@@ -197,7 +305,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "Yes! ESM works with top U.S. athletes and can coordinate appearances, exhibitions, or meet-and-greet moments at your club. We can also help with hospitality partners including food, beverage, wellness vendors, and brand sampling partners.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Host an event', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     }
     // Event sub-options
@@ -209,7 +317,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "ESM produces various event types:\n• Athlete events\n• Club activations\n• Influencer experiences\n• Corporate engagements\n• Tournaments and leagues\n• Exhibition matches\n• Networking events\n\nWe handle concept development, logistics, and on-site execution.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Looking for athletes?', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'looking for athletes?'
@@ -219,7 +327,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "Yes! ESM works with top U.S. athletes and can coordinate appearances, exhibitions, or meet-and-greet moments at your event. We can also help with content planning, photography, videography, and influencer distribution.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Looking for sponsors?', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'looking for sponsors?'
@@ -229,7 +337,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "ESM creates sponsorship opportunities and packages for events. We pitch partners, negotiate deals, and manage deliverables. Sponsorship packages are priced based on event type, audience reach, athlete visibility, and deliverables. Brands receive reporting after events including metrics, impressions, content performance, and outcome summaries.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Need a deck or concept?', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'need a deck or concept?'
@@ -251,7 +359,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "Elite Sports Management (ESM) is a sports management and brand partnership agency specializing in padel athletes, clubs, and event activations. We blend athlete experience with high-level brand strategy, offering a boutique, performance-first approach to partnerships.",
         isBot: true,
         timestamp: new Date(),
-        options: ['Who founded ESM?', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'who founded esm?'
@@ -261,7 +369,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         text: "ESM was founded by Dhanielly Quevedo, a top-ranked U.S. padel athlete and corporate communications professional. This unique combination brings both athlete experience and high-level brand strategy to every partnership.",
         isBot: true,
         timestamp: new Date(),
-        options: ['What makes ESM unique?', 'Contact ESM', 'Back to main menu'],
+        options: ['Contact ESM', 'Back to main menu'],
       };
     } else if (
       input === 'what makes esm unique?'
@@ -580,7 +688,9 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
                       : 'bg-darkBlue text-light'
                   }`}
                 >
-                  <p className="text-xs whitespace-pre-line font-neue-roman leading-relaxed">{message.text}</p>
+                  <p className="text-xs whitespace-pre-line font-neue-roman leading-relaxed">
+                    {renderTextWithLinks(message.text)}
+                  </p>
                   <span className="text-[10px] opacity-70 mt-1 block">
                     {message.timestamp.toLocaleTimeString([], {
                       hour: '2-digit',
