@@ -54,7 +54,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
 
   // Function to render text with clickable links
   const renderTextWithLinks = (text: string) => {
-    const parts: (string | JSX.Element)[] = [];
+    const parts: (string | React.ReactElement)[] = [];
     let lastIndex = 0;
     
     // Email pattern
