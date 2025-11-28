@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Instagram token file (contains sensitive access tokens)
+instagram_token.json
+
 # vercel
 .vercel
 
