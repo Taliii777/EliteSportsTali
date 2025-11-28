@@ -248,7 +248,7 @@ export default function RootLayout({
       >
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
-      <GoogleAnalytics gaId='G-V6G7JTQ8VK' />
+      <GoogleAnalytics gaId='G-VGE10YL3W0' />
     </html>
   );
 }
