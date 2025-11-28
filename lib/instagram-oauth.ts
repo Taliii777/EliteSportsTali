@@ -8,11 +8,11 @@ export function buildInstagramAuthUrl(): string {
   const { appId, redirectUri } = instagramConfig;
   
   if (!appId) {
-    throw new Error('INSTAGRAM_APP_ID no está configurado');
+    throw new Error('META_APP_ID no está configurado');
   }
   
   if (!redirectUri) {
-    throw new Error('INSTAGRAM_REDIRECT_URI no está configurado');
+    throw new Error('META_REDIRECT_URI no está configurado');
   }
 
   const scopes = [
@@ -80,7 +80,7 @@ export async function exchangeShortForLongToken(shortToken: string): Promise<{
   const { appSecret } = instagramConfig;
 
   if (!appSecret) {
-    throw new Error('INSTAGRAM_APP_SECRET no está configurado');
+    throw new Error('META_APP_SECRET no está configurado');
   }
 
   const url = new URL('https://graph.instagram.com/access_token');
