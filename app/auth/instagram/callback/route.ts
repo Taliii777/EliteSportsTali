@@ -13,11 +13,15 @@ import { validateInstagramConfig } from '@/lib/instagram-config';
  */
 export async function GET(request: NextRequest) {
   try {
-    // Validar configuración
+    // Validar configuración al inicio
     const configValidation = validateInstagramConfig();
     if (!configValidation.valid) {
+      const missingList = configValidation.missing.join(', ');
       return new NextResponse(
-        generateErrorHTML('Configuración incompleta', 'Por favor, configura las variables de entorno necesarias.'),
+        generateErrorHTML(
+          'Configuración incompleta',
+          `Faltan las siguientes variables de entorno: ${missingList}. Por favor, configura estas variables en tu archivo .env.local`
+        ),
         { status: 500, headers: { 'Content-Type': 'text/html' } }
       );
     }
@@ -296,4 +300,5 @@ function escapeHtml(text: string): string {
   };
   return text.replace(/[&<>"']/g, (m) => map[m]);
 }
+
 
