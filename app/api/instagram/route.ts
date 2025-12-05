@@ -72,7 +72,7 @@ export async function GET() {
     let posts: any[] = [];
 
     // Método 1: Buscar window._sharedData (método más común)
-    const sharedDataMatch = html.match(/window\._sharedData\s*=\s*({.+?});/s);
+    const sharedDataMatch = html.match(/window\._sharedData\s*=\s*({[\s\S]+?});/);
     if (sharedDataMatch) {
       try {
         console.log('[Instagram API] Trying method 1: _sharedData');
@@ -91,7 +91,7 @@ export async function GET() {
     if (posts.length === 0) {
       console.log('[Instagram API] Trying method 2: application/json scripts');
       // Buscar específicamente el script con datos del usuario
-      const jsonScriptPattern = /<script type="application\/json"[^>]*data-sveltekit-preload-data[^>]*>(.*?)<\/script>/s;
+      const jsonScriptPattern = /<script type="application\/json"[^>]*data-sveltekit-preload-data[^>]*>([\s\S]*?)<\/script>/;
       const jsonScriptMatch = html.match(jsonScriptPattern);
       
       if (jsonScriptMatch) {
@@ -120,7 +120,7 @@ export async function GET() {
       
       // Si no funcionó, intentar con todos los scripts JSON
       if (posts.length === 0) {
-        const jsonScriptMatches = html.matchAll(/<script type="application\/json"[^>]*>(.*?)<\/script>/gs);
+        const jsonScriptMatches = html.matchAll(/<script type="application\/json"[^>]*>([\s\S]*?)<\/script>/g);
         for (const match of jsonScriptMatches) {
           try {
             const jsonData = JSON.parse(match[1]);
@@ -152,7 +152,7 @@ export async function GET() {
 
     // Método 3: Buscar datos en window.__additionalDataLoaded
     if (posts.length === 0) {
-      const additionalDataMatch = html.match(/window\.__additionalDataLoaded[^;]*\([^,]+,\s*({.+?})\);/s);
+      const additionalDataMatch = html.match(/window\.__additionalDataLoaded[^;]*\([^,]+,\s*({[\s\S]+?})\);/);
       if (additionalDataMatch) {
         try {
           const additionalData = JSON.parse(additionalDataMatch[1]);
@@ -191,8 +191,8 @@ export async function GET() {
     if (posts.length === 0) {
       console.log('[Instagram API] Trying method 5: __additionalDataLoaded');
       const additionalDataPatterns = [
-        /window\.__additionalDataLoaded[^;]*\([^,]+,\s*({.+?})\);/s,
-        /window\.__additionalDataLoaded\('.*?',\s*({.+?})\);/s,
+        /window\.__additionalDataLoaded[^;]*\([^,]+,\s*({[\s\S]+?})\);/,
+        /window\.__additionalDataLoaded\('[\s\S]*?',\s*({[\s\S]+?})\);/,
       ];
       
       for (const pattern of additionalDataPatterns) {
